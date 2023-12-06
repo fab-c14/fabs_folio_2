@@ -1,0 +1,26 @@
+
+
+button {
+  cursor: pointer;
+}
+
+
+
+
+/* Basic styling for the root element */
+body {
+font-family: "Courier New", Courier, monospace;
+  margin: 0;
+  padding: 0;
+  background-color: #f0f0f0; /* Set your desired background color */
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Add specific styles to your components as needed */
+
+/* For responsive design, consider using media queries and adjusting styles based on screen size */
