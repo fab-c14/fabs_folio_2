@@ -11,7 +11,6 @@ class About extends Component{
     render(){
         return (
             <>
-
                 <div className="f3 tc w-100 mt3" id="about_back">
                 <h1 className="ttu shadow-1 hover-bg-green br3"> About Me </h1>
                 <Container>

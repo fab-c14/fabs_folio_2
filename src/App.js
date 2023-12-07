@@ -10,17 +10,29 @@ import Footer from './Components/Footer';
 import { Fade } from 'react-reveal';
 import Skills from './Components/Skills';
 import 'tachyons';
-// import ParticlesBg from 'particles-bg';
+import ParticlesBg from 'particles-bg';
 import './index.css';
 
 const App = () => {
   return (
     <div>
+       <div style={{
+          width:"99%",
+          height:"99%",
+          position:"fixed",
+        
+          backgroundSize:"cover",
+          zIndex:-1
+        }}>
+          <ParticlesBg bg={true} type="lines" zIndex={"-1"} num={window.innerWidth<700?20:90} interactive={true}/>
+        </div>
+
       <div className="container">
      
-          <Header />
-         
-        
+         <Header />
+         <About />
+         <Works/>
+         <Footer />
        
       </div>
     </div>
