@@ -13,8 +13,8 @@ class Footer extends Component{
             <Fade left cascade duration={2000}>
             <div>
                 <Row>
-                    <div className="tc fw3 white bg-black">
-                    <h1 className="tc fw4 bg-light-green br2 pa2 ma3 near-black">Follow Me On Social Media </h1>
+                    <div className="tc fw3 white bg-black mt5">
+                    <h1 className="tc fw4 bg-light-green br2 pa2 ma3 near-black"> Contact Me </h1>
                   
                             <div className="glow"> 
                                 <a href="https://instagram.com/_fabc14?igshid=ZDc4ODBmNjlmNQ==" target="_new" className="red dim">

@@ -2,7 +2,7 @@ import React,{Component} from "react";
 import Container from "react-bootstrap/Container";
 import Project from "../Assets/Project";
 import Row from 'react-bootstrap/Row';
-
+import ParticlesBg from "particles-bg";
 class Works extends Component{
     render(){
 
@@ -10,7 +10,7 @@ class Works extends Component{
             <>
                 <div>
                     <Container>
-                        
+                       
                         <h1 className="f1 ttu tc b"> Projects</h1>
                         <Row>
              <Project 

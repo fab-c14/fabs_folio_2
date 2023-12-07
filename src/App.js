@@ -8,23 +8,19 @@ import About from './Components/About';
 import Works from './Components/Works';
 import Footer from './Components/Footer';
 import { Fade } from 'react-reveal';
-import Contact from './Components/Contact';
+import Skills from './Components/Skills';
 import 'tachyons';
-import ParticlesBg from 'particles-bg';
+// import ParticlesBg from 'particles-bg';
 import './index.css';
 
 const App = () => {
   return (
     <div>
-        <ParticlesBg type="tadpole" bg={true} width={"100%"} height={"100vh"} />
       <div className="container">
-        <Fade left cascade>
+     
           <Header />
-          <About />
-          <Works />
-          <Contact />
-          <Footer />
-        </Fade>
+         
+        
        
       </div>
     </div>
