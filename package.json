@@ -4,6 +4,7 @@
   "description": "Welcome to your This private respository that contains the base code of fabsfolio and it was build on 22-07-23 8:05 pm",
   "main": "index.js",
   "dependencies": {
+    "bootstrap": "^5.3.2",
     "particles-bg": "^2.5.5",
     "react-bootstrap": "^2.9.1",
     "react-dom": "^18.2.0",
@@ -11,6 +12,7 @@
     "react-reveal": "^1.2.2",
     "react-router-dom": "^6.20.1",
     "react-scripts": "^5.0.1",
+    "react-tilt": "^1.0.2",
     "react-tsparticles": "^2.12.2",
     "tachyons": "^4.12.0",
     "tsparticles": "^2.12.0"

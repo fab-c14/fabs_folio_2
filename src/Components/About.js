@@ -1,64 +1,59 @@
-import React,{Component} from "react";
-import Container  from "react-bootstrap/Container";
+import React, { Component } from "react";
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
-// import '../Assets/About.css'
 import sample_resume from '../Assets/sample_resume.pdf';
-import 'tachyons'
-import {Slide,Rotate,Zoom,Fade} from 'react-reveal'
+import { Slide, Zoom } from 'react-reveal';
 import back from '../Assets/back.jpg';
-class About extends Component{
-    render(){
-        return (
-            <>
-                <div className="f3 tc w-100 mt3" id="about_back">
-                <h1 className="ttu shadow-1 hover-bg-green br3"> About Me </h1>
-                <Container>
-                        <Row className="w-100">
-                            <Col >
-                                <Container className="w-100">
-                                    <Col xs sm md lg>
-                                        <Row >
-                                            <Col xs sm>
-                                                <div className="pa2 ma1 right">
-                                                    <Slide left cascade duration={2000}> 
-                                                    <Container>
-                                                    <img src={back} alt="ImageNotFound" className="h-auto w5 grow tr shadow-2  br3 mw5 mw-6-ns v-mid center"/>
-                                                    </Container>
-                                                    </Slide>
-                                                </div>
-                                            </Col>
-                                        </Row>
-                                    </Col>
-                                </Container>
-                            </Col>
-                        
-                            <Col sm xs lg md>
-                                <Row className="w-100">
-                                    <Col>
-                                    <Zoom left cascade duration={2000}>
-                                        <div className="code left mt3 mb4 v-mid mw6 b fw6 f2"> 
-                                    
-                                            <p className="f5">I am a  Full Stack Web Developer and Programmer. </p>
-                                           
-                                            <p className="f5">i am self learned guy who is ingenious and cordial, adaptive person</p>
-                                            <p className="f5">Who Profoundly relishes to Learn More and More</p>
-                                            
-                                            <a className="btnFillup liquidbg f5" target="_blank" href={sample_resume}>View Resume</a>
-                                            
-                                    </div>
-                                    </Zoom>
-                                    </Col>
-                                </Row>
-                            </Col>
-                           
-                        </Row>
-                        <br/>
-                    </Container>
-                </div>
-            </>
-        )
-    }
+import { Tilt } from "react-tilt";
+class About extends Component {
+  render() {
+    return (
+      <>
+        <div className="f3 shadow-5 tc w-100 mt3 white" id="about_back">
+          <h1 className="ttu shadow-1 hover-bg-green br3"> Get to Know Me </h1>
+          <Container>
+            <Row className="w-100">
+              <Col xs={12} md={6}>
+                <Container className="w-100">
+                  <Row>
+                    <Col xs={12} sm={6}>
+                      <div className="pa2 ma1 right">
+                        <Slide left cascade duration={2000}>
+                          <Container>
+                            <Tilt>
+                            <img src={back} alt="My Photo" className="img-fluid grow tr shadow-2 br3 v-mid center" />
+                            </Tilt>
+                          </Container>
+                        </Slide>
+                      </div>
+                    </Col>
+                  </Row>
+                </Container>
+              </Col>
+
+              <Col xs={12} md={6}>
+                <Row className="w-100">
+                  <Col>
+                    <Zoom left cascade duration={2000}>
+                      <div className="code left mt3 mb4 v-mid b fw6 f2">
+                        <p className="f5">Hey there! I'm a Full Stack Web Developer and Programming Enthusiast.</p>
+                        <p className="f5">Self-taught and always curious, I thrive on challenges and love learning new things.</p>
+                        <p className="f5">Passionate about creating innovative solutions and exploring cutting-edge technologies.</p>
+                        <a className="btnFillup liquidbg f5" target="_blank" rel="noopener noreferrer" href={sample_resume}>Check Out My Resume</a>
+                      </div>
+                    </Zoom>
+                  </Col>
+                </Row>
+              </Col>
+            </Row>
+            <br />
+          </Container>
+        </div>
+      </>
+    );
+  }
 }
 
 export default About;

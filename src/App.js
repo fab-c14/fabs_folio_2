@@ -17,14 +17,14 @@ const App = () => {
   return (
     <div>
        <div style={{
-          width:"99%",
-          height:"99%",
+          width:"100%",
+          height:"100%",
           position:"fixed",
         
           backgroundSize:"cover",
           zIndex:-1
         }}>
-          <ParticlesBg bg={true} type="lines" zIndex={"-1"} num={window.innerWidth<700?20:90} interactive={true}/>
+          <ParticlesBg bg={true} type="thick" zIndex={"-1"} num={window.innerWidth<700?20:90} interactive={true}/>
         </div>
 
       <div className="container">
