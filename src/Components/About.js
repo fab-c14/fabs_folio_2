@@ -5,7 +5,7 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import { Button } from "react-bootstrap";
 import sample_resume from '../Assets/sample_resume.pdf';
-import { Slide, Zoom,Bounce } from 'react-reveal';
+import { Slide, Zoom,Bounce } from 'react-awesome-reveal';
 import back from '../Assets/back.jpg';
 import { Tilt } from "react-tilt";
 class About extends Component {

@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { Container, Row, Col } from "react-bootstrap";
-import { Bounce, Fade } from "react-reveal";
 
 class Header extends Component {
   render() {

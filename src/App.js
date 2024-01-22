@@ -1,13 +1,9 @@
 
-import React from 'react';
-import ReactDOM from 'react-dom';
-// import 'bootstrap/dist/css/bootstrap.css';
-// import reportWebVitals from './reportWebVitals';
+import 'bootstrap/dist/css/bootstrap.css';
 import Header from './Components/Header';
 import About from './Components/About';
 import Works from './Components/Works';
 import Footer from './Components/Footer';
-import { Fade } from 'react-reveal';
 import Skills from './Components/Skills';
 import 'tachyons';
 import ParticlesBg from 'particles-bg';
@@ -24,7 +20,7 @@ const App = () => {
           backgroundSize:"cover",
           zIndex:-1
         }}>
-          <ParticlesBg bg={true} type="thick" zIndex={"-1"} num={window.innerWidth<700?20:90} interactive={true}/>
+          <ParticlesBg bg={true} type="thick" zIndex={"-1"} num={window.innerWidth<700?20:90}/>
         </div>
 
       <div className="container">
