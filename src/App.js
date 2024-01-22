@@ -8,7 +8,7 @@ import Skills from './Components/Skills';
 import { Fade } from 'react-awesome-reveal';
 import 'tachyons';
 import ParticlesBg from 'particles-bg';
-import './index.css';
+
 
 const App = () => {
   const [particleType, setParticleType] = useState('cobweb');
@@ -33,7 +33,7 @@ const App = () => {
         <ParticlesBg bg={true} type={particleType} zIndex={'-1'} num={window.innerWidth < 700 ? 20 : 90} />
       </div>
 
-      <div className="container">
+      <div className="container" style={{ position: 'relative' }}>
         <button
           onClick={handleParticleChange}
           style={{
@@ -57,6 +57,7 @@ const App = () => {
           <Skills />
           <Footer />
         </Fade>
+        <div className="cursor-effect"></div>
       </div>
     </div>
   );
