@@ -16,8 +16,8 @@ class Works extends Component {
                 pic=""
                 desc="ImageScrapper is a versatile Python-based web scraping tool designed for fetching and downloading images from various websites. Leveraging the power of Flask, Requests, Flask-CORS, Logging, and Beautiful Soup, ImageScrapper provides a robust and efficient solution for your image scraping needs."
                 sourceCode='https://github.com/fab-c14/ImageScraper.git'
+                // liveLink="https://fab-c14.github.io/imageScrapper"
                 liveLink=""
-                skills="js python"
                 picAlt='https://picsum.photos/370/160?random=1'
               />
 
