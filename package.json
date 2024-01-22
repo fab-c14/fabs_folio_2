@@ -1,6 +1,7 @@
 {
   "name": "fabs_folio",
   "version": "1.1.4",
+  "homepage": ".",
   "description": "Welcome to your This private respository that contains the base code of fabsfolio and it was build on 22-07-23 8:05 pm",
   "main": "index.js",
   "dependencies": {
