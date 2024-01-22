@@ -1,13 +1,13 @@
 import React, { Component } from "react";
-import 'bootstrap/dist/css/bootstrap.min.css';
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import { Button } from "react-bootstrap";
 import sample_resume from '../Assets/sample_resume.pdf';
-import { Slide, Zoom,Bounce } from 'react-awesome-reveal';
+import { Slide, Fade } from 'react-awesome-reveal';
 import back from '../Assets/back.jpg';
 import { Tilt } from "react-tilt";
+
 class About extends Component {
   render() {
     return (
@@ -21,10 +21,10 @@ class About extends Component {
                   <Row>
                     <Col xs={12} sm={6}>
                       <div className="pa2 ma1 right">
-                        <Slide left cascade duration={2000}>
+                        <Slide right cascade duration={2000}>
                           <Container>
                             <Tilt tilt={24}>
-                            <img src={back} alt="My Photo" className="img-fluid grow tr shadow-4 black br3 v-mid center" />
+                              <img src={back} alt="My Photo" className="img-fluid grow tr shadow-4 black br3 v-mid center" />
                             </Tilt>
                           </Container>
                         </Slide>
@@ -37,26 +37,24 @@ class About extends Component {
               <Col xs={12} md={6}>
                 <Row className="w-100">
                   <Col>
-                    <Zoom left cascade duration={2000}>
+                    <Fade left cascade duration={2000}>
                       <div className="code left mt3 mb4 v-mid b fw6 f2">
                         <p className="f5">Hey there! I'm a Full Stack Web Developer and Programming Enthusiast.</p>
                         <p className="f5">Self-taught and always curious, I thrive on challenges and love learning new things.</p>
                         <p className="f5">Passionate about creating innovative solutions and exploring cutting-edge technologies.</p>
                         <Button
-                            variant="outline-primary"
-                            target="_new"
-                            rel="noopener noreferrer"
-                            href={sample_resume}
-                            className="btnFillup liquidbg f5 mt3 b"
-                          >
-                            <Bounce top >
-                              <Tilt>
-                              Check Out My Resume
-                              </Tilt>
-                            </Bounce>
+                          variant="outline-primary"
+                          target="_new"
+                          rel="noopener noreferrer"
+                          href={sample_resume}
+                          className="btnFillup liquidbg f5 mt3 b"
+                        >
+                          <Tilt tilt={24}>
+                            Check Out My Resume
+                          </Tilt>
                         </Button>
                       </div>
-                    </Zoom>
+                    </Fade>
                   </Col>
                 </Row>
               </Col>
