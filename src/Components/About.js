@@ -3,7 +3,7 @@ import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import { Button } from "react-bootstrap";
-import sample_resume from '../Assets/sample_resume.pdf';
+import sample_resume from '../Assets/fabs_resume_latest.pdf';
 import { Slide, Fade } from 'react-awesome-reveal';
 import back from '../Assets/back.jpg';
 import { Tilt } from "react-tilt";

@@ -1,9 +1,8 @@
 import React from 'react';
 import { Row, Col, Card, Button } from "react-bootstrap";
-import { Tilt } from 'react-tilt';
 import 'tachyons';
 
-const Project = ({ name, pic, sourceCode, liveLink, desc, picAlt }) => {
+const Project = ({ name, pic, sourceCode, liveLink, desc, picAlt, skills }) => {
   if (pic === "" || pic === " ") {
     pic = picAlt; // choosing a random picture from the web
   }
@@ -14,7 +13,12 @@ const Project = ({ name, pic, sourceCode, liveLink, desc, picAlt }) => {
         <Col md={6} style={{ position: 'relative' }}>
           <Card className="georgia w-100 h-100">
             <Card.Body style={{ background: 'linear-gradient(to right, #87CEEB, #9370DB)' }}>
-              <Card.Title className='f2'>{name}</Card.Title>
+              <Card.Title className='f2 mb-3'>{name}</Card.Title>
+              {skills && (
+                <div className="mb-3">
+                  <strong>Skills Used: </strong>{skills}
+                </div>
+              )}
               <Card.Text>
                 {desc}
               </Card.Text>
