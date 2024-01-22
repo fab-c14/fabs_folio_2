@@ -3,35 +3,40 @@ import { Component } from 'react';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import 'tachyons';
-import { Slide, Fade, Rotate } from 'react-awesome-reveal';
 
-class Contact extends Component {
+class SKills extends Component {
   render() {
+    const{ style}=this.props;
+    const skills = [
+      { name: 'React', logo: 'https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=react&logoColor=white' },
+      { name: 'JavaScript', logo: 'https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black' },
+      { name: 'HTML', logo: 'https://img.shields.io/badge/HTML-E34F26?style=for-the-badge&logo=html5&logoColor=white' },
+      { name: 'CSS', logo: 'https://img.shields.io/badge/CSS-1572B6?style=for-the-badge&logo=css3&logoColor=white' },
+      { name: 'Bootstrap', logo: 'https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white' },
+      { name: 'Node.js', logo: 'https://img.shields.io/badge/Node.js-43853D?style=for-the-badge&logo=node.js&logoColor=white' },
+      { name: 'Express.js', logo: 'https://img.shields.io/badge/Express.js-000000?style=for-the-badge&logo=express&logoColor=white' },
+      { name: 'MongoDB', logo: 'https://img.shields.io/badge/MongoDB-47A248?style=for-the-badge&logo=mongodb&logoColor=white' },
+      // Add more skills and their logos
+    ];
+
     return (
       <>
-        <Rotate bottom right cascade>
-          <Row>
-            <div className='tc Consolas' id="contact">
-              <Col>
-                <Fade>
-                  <h1 className='ttu f1 fw6'>Contact Us</h1>
-                </Fade>
-                <Slide bottom cascade duration={2000}>
-                  <div>
-                    <h2 className='f3 code fw4'>Want To Connect With Me? Hit The Below Button</h2>
-                    <hr width={'30%'} className="center washed-red" />
-                    <a className="f4 link dim ph3 pv2 mb2 black bg-white dib fw6 br3 ma2" href="mailto:plesim18@gmail.com?subject=SweetWords&body=Please send me a copy of your new program!" target='_new'>
-                      Contact Me
-                    </a>
-                  </div>
-                </Slide>
-              </Col>
+        <Row className="mt-5">
+          <Col className="text-center">
+            <h2 className="mb-4">My Skills</h2>
+            <div className="flex flex-wrap justify-center">
+              {skills.map((skill, index) => (
+                <article key={index} className="mw5 bg-white br3 pa3 ma2 shadow-5">
+                  <img src={skill.logo} className="db w-100 br2 mb2" alt={skill.name} />
+                  <h4 className="f5 mb2 red">{skill.name}</h4>
+                </article>
+              ))}
             </div>
-          </Row>
-        </Rotate>
+          </Col>
+        </Row>
       </>
     );
   }
 }
 
-export default Contact;
+export default Skills;

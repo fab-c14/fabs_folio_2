@@ -9,10 +9,12 @@ import back from '../Assets/back.jpg';
 import { Tilt } from "react-tilt";
 
 class About extends Component {
+
   render() {
+    const { style } = this.props;
     return (
       <>
-        <div className="f3 shadow-5 tc w-100 mt3 white" id="about_back">
+        <div className="f3 shadow-5 tc w-100 mt3" color={this.style} id="about_back">
           <h1 className="ttu shadow-1 hover-bg-green br3"> Get to Know Me </h1>
           <Container>
             <Row className="w-100">

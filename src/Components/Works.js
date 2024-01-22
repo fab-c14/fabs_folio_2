@@ -2,15 +2,14 @@ import React, { Component } from "react";
 import Container from "react-bootstrap/Container";
 import Project from "../Assets/Project";
 import Row from 'react-bootstrap/Row';
-import ParticlesBg from "particles-bg";
-
 class Works extends Component {
   render() {
+    const {style} = this.props;
     return (
       <>
         <div>
-          <Container className="white">
-            <h1 className="f1 ttu tc b">Projects</h1>
+          <Container>
+            <h1 className="f1 ttu tc b" color={this.style}>Projects</h1>
             <Row>
               <Project
                 name="Image Scrapper"
@@ -18,6 +17,7 @@ class Works extends Component {
                 desc="ImageScrapper is a versatile Python-based web scraping tool designed for fetching and downloading images from various websites. Leveraging the power of Flask, Requests, Flask-CORS, Logging, and Beautiful Soup, ImageScrapper provides a robust and efficient solution for your image scraping needs."
                 sourceCode='https://github.com/fab-c14/ImageScraper.git'
                 liveLink=""
+                skills="js python"
                 picAlt='https://picsum.photos/370/160?random=1'
               />
 

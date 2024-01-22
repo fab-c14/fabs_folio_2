@@ -18,7 +18,6 @@ class Footer extends Component {
   render() {
     return (
       <>
-        <Fade left cascade duration={2000}>
           <Row className="text-center mt-5">
             <div className="fw3 white bg-black">
               <h1 className="fw4 bg-light-green br2 pa2 ma3 near-black"> Contact Me </h1>
@@ -48,7 +47,6 @@ class Footer extends Component {
               </div>
             </div>
           </Row>
-        </Fade>
       </>
     )
   }
