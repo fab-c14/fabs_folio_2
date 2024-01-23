@@ -3,7 +3,6 @@ import { Container, Row, Col } from "react-bootstrap";
 
 const Header = () => {
   const legionQuotes = [
-    "The living plague me with forgotten emotions",
     "The future is thrilling. And truly fascinating. The past is a burden. And the present is a torment",
     "Perhaps there is a way to redeem my vile self",
     "I am loyal to my destiny",
@@ -11,11 +10,7 @@ const Header = () => {
     "Cease the excruciating cacophony",
     "The shadow legion is at your command",
     "Heavy is the head that wears the crown",
-    "I will forget who you are",
-    "Don't let the Legion die, general",
-    "Defeat me!",
-    "Fall to your knees and maybe you'll be able to save your soul",
-    "Glory to the eternal reign of the Shadow Legion!"
+    "Heavy Are The Hands That Hold The Cursed Sword",
   ];
 
   const [visibleText, setVisibleText] = useState("");
@@ -31,9 +26,9 @@ const Header = () => {
           setTimeout(() => {
             setQuoteIndex((prevIndex) => (prevIndex + 1) % legionQuotes.length);
             setVisibleText("");
-          }); // Delay before starting the next quote
+          },80); // Delay before starting the next quote
         }
-      }, 100); // Adjust the interval for the typing speed
+      }, 150); // Adjust the interval for the typing speed
 
       return () => clearInterval(intervalId);
     }
@@ -59,7 +54,7 @@ const Header = () => {
         <Col xs={12}>
           <hr />
           <small style={{ fontSize: "14px", margin: "-2px", padding: "-3px",fontWeight:"bolder"}} color="green">
-            {visibleText}
+            | {visibleText} |
           </small>
           <hr />
         </Col>

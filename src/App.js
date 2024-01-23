@@ -11,11 +11,11 @@ import ParticlesBg from 'particles-bg';
 
 const App = () => {
   const [particleType, setParticleType] = useState('cobweb');
-  const [isDarkMode, setIsDarkMode] = useState(true);
+  const [isLightMode, setIsLightMode] = useState(true);
 
   const handleParticleChange = () => {
     setParticleType(particleType === 'cobweb' ? 'thick' : 'cobweb');
-    setIsDarkMode(!isDarkMode);
+    setIsLightMode(!isLightMode);
   };
 
   return (
@@ -40,24 +40,24 @@ const App = () => {
             top: 10,
             left: 10,
             zIndex: 1000,
-            background: isDarkMode ? 'rgba(0, 0, 0, 0.7)' : 'rgba(255, 255, 255, 0.7)',
-            color: isDarkMode ? 'white' : 'black',
+            background: isLightMode ? 'rgba(0, 0, 0, 0.7)' : 'rgba(255, 255, 255, 0.7)',
+            color: isLightMode ? 'white' : 'black',
             padding: '10px',
             border: 'none',
             cursor: 'pointer',
           }}
         >
-          {isDarkMode ? 'Light Mode On' : 'Light Mode Off'}
+          {isLightMode ? 'Light Mode On' : 'Light Mode Off'} {/* I have set the light mode on */}
         </button>
-        <Slide direction="left" cascade duration={200}>
-          <Fade cascade fraction={0.1} duration={600} distance={'1px'} style={{ color: isDarkMode ? 'black' : 'white', fontSize: '20px' }}>
-            <Header style={{ color: isDarkMode ? 'black' : 'white' }} />
-            <About style={{ color: isDarkMode ? 'black' : 'white' }} />
-            <Works style={{ color: isDarkMode ? 'black' : 'red' }} />
+       
+          <Fade cascade fraction={0.1} duration={600} distance={'1px'} style={{ color: isLightMode ? 'black' : 'white', fontSize: '20px' }}>
+            <Header style={{ color: isLightMode ? 'black' : 'white' }} />
+            <About style={{ color: isLightMode ? 'black' : 'white' }} />
+            <Works style={{ color: isLightMode ? 'black' : 'red' }} />
             <Skills />
             <Footer />
           </Fade>
-        </Slide>
+       
       </div>
     </div>
   );
