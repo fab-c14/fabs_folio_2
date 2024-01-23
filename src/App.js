@@ -30,7 +30,7 @@ const App = () => {
           zIndex: -1,
         }}
       >
-        <ParticlesBg bg={true} type={particleType} zIndex={'-1'} num={window.innerWidth < 700 ? 20 : 90} />
+        <ParticlesBg bg={true} type={particleType} zIndex={'-1'} num={window.innerWidth < 700 ? 60 : 120} />
       </div>
 
       <div className="container" style={{ position: 'relative' }}>
@@ -57,7 +57,6 @@ const App = () => {
           <Skills />
           <Footer />
         </Fade>
-        <div className="cursor-effect"></div>
       </div>
     </div>
   );

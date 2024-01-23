@@ -8,6 +8,8 @@ import { Slide, Fade } from 'react-awesome-reveal';
 import back from '../Assets/back.jpg';
 import { Tilt } from "react-tilt";
 
+// ... (previous imports)
+
 class About extends Component {
 
   render() {
@@ -23,10 +25,22 @@ class About extends Component {
                   <Row>
                     <Col xs={12} sm={6}>
                       <div className="pa2 ma1 right">
-                        <Slide right cascade duration={2000}>
+                        <Slide
+                          direction="right"
+                          cascade
+                          duration={1000} // Specify the duration of the slide effect in milliseconds
+                          triggerOnce // Only trigger the slide effect once
+                          damping={0.5} // Adjust the damping of the animation
+                          delay={100} // Introduce a delay before the animation starts
+                        >
                           <Container>
                             <Tilt tilt={24}>
-                              <img src={back} alt="My Photo" className="img-fluid grow tr shadow-4 black br3 v-mid center" />
+                              <img
+                                src={back}
+                                alt="My Photo"
+                                className="img-fluid grow rounded-circle tr shadow-4 black br-50 v-mid center"
+                                style={{ width: "100%", height: "auto" }} // Adjust the width and height as needed
+                              />
                             </Tilt>
                           </Container>
                         </Slide>
@@ -70,3 +84,4 @@ class About extends Component {
 }
 
 export default About;
+

@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import Container from "react-bootstrap/Container";
 import Project from "../Assets/Project";
 import Row from 'react-bootstrap/Row';
+import { Fade } from "react-awesome-reveal";
 class Works extends Component {
   render() {
     const {style} = this.props;
@@ -11,6 +12,7 @@ class Works extends Component {
           <Container>
             <h1 className="f1 ttu tc b" color={this.style}>Projects</h1>
             <Row>
+          <Fade>
               <Project
                 name="Image Scrapper"
                 pic=""
@@ -20,6 +22,16 @@ class Works extends Component {
                 liveLink=""
                 picAlt='https://picsum.photos/370/160?random=1'
               />
+              <Project
+                name="React Node Auth App"
+                pic=""
+                sourceCode="https://github.com/your-github-username/react-node-auth-app-repo"
+                picAlt='https://picsum.photos/370/160?random=6'
+                liveLink="https://reactauthapp1.netlify.app"
+                desc="A full-stack authentication app built with React and Node. This app allows users to securely authenticate and access protected resources."
+                skills="React, Node.js, Express.js"
+              />
+
 
               <Project
                 name="Review Scrapper"
@@ -47,6 +59,16 @@ class Works extends Component {
                 liveLink="https://fab-c14.github.io/Image_gallery/index.html"
                 desc="Image Gallery is a beautiful Js based Project Which You Can also try. If You are Beginner in web Development."
               />
+              <Project
+                name="Recognizer"
+                pic=""
+                sourceCode="https://github.com/fab-c14/fab-c14.github.io/tree/master/Recognizer"
+                picAlt='https://picsum.photos/370/160?random=5'
+                liveLink="https://fab-c14.github.io/Recognizer"
+                desc="Recognizer is A tool which tells about what an image contains."
+              />
+              
+          </Fade>
             </Row>
           </Container>
         </div>

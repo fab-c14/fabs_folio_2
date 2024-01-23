@@ -1,10 +1,22 @@
-.cursor-effect {
+/* Add this style in your stylesheet or in the same file */
+.glow-corner-effect:hover {
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.7); /* Add glow effect on hover */
+}
+
+.glow-corner-effect:hover::before,
+.glow-corner-effect:hover::after {
+  content: '';
   position: absolute;
   top: 0;
-  left: 0;
   width: 100%;
-  height: 100%;
-  pointer-events: none;
-  background: linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0));
-  z-index: 999;
+  height: 5px;
+  background: linear-gradient(to right, #87CEEB, #9370DB); /* Add linear gradient on adjacent lines */
+}
+
+.glow-corner-effect:hover::before {
+  left: 0;
+}
+
+.glow-corner-effect:hover::after {
+  right: 0;
 }
