@@ -2,6 +2,7 @@ import React from 'react';
 import { Row, Col, Button } from "react-bootstrap";
 import 'tachyons';
 
+import './Project.css';
 const Project = ({ name, pic, sourceCode, liveLink, desc, picAlt, skills }) => {
   if (pic === "" || pic === " ") {
     pic = picAlt; // choosing a random picture from the web
@@ -11,7 +12,7 @@ const Project = ({ name, pic, sourceCode, liveLink, desc, picAlt, skills }) => {
     <>
       <Row className="w-100 my-4 mx-2">
         <Col md={6} style={{ position: 'relative' }}>
-          <article className="georgia w-90 h-90 shadow-4 pa3">
+          <article className="georgia w-90 h-90 shadow-4 pa3 linear-bg">
             <h2 className='f2 mb-3'>{name}</h2>
             {skills && (
               <div className="mb-3">

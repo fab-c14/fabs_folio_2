@@ -5,10 +5,9 @@ import About from './Components/About';
 import Works from './Components/Works';
 import Footer from './Components/Footer';
 import Skills from './Components/Skills';
-import { Fade } from 'react-awesome-reveal';
+import { Slide, Fade } from 'react-awesome-reveal'; // Import Slide and Fade
 import 'tachyons';
 import ParticlesBg from 'particles-bg';
-
 
 const App = () => {
   const [particleType, setParticleType] = useState('cobweb');
@@ -50,13 +49,15 @@ const App = () => {
         >
           {isDarkMode ? 'Light Mode On' : 'Light Mode Off'}
         </button>
-        <Fade cascade fraction={0.1} duration={600} distance={'50px'} style={{ color: isDarkMode ? 'black' : 'white', fontSize: '20px' }}>
-          <Header style={{ color: isDarkMode ? 'black' : 'white' }} />
-          <About style={{ color: isDarkMode ? 'black' : 'white' }} />
-          <Works style={{ color: isDarkMode ? 'black' : 'red' }} />
-          <Skills />
-          <Footer />
-        </Fade>
+        <Slide direction="left" cascade duration={200}>
+          <Fade cascade fraction={0.1} duration={600} distance={'1px'} style={{ color: isDarkMode ? 'black' : 'white', fontSize: '20px' }}>
+            <Header style={{ color: isDarkMode ? 'black' : 'white' }} />
+            <About style={{ color: isDarkMode ? 'black' : 'white' }} />
+            <Works style={{ color: isDarkMode ? 'black' : 'red' }} />
+            <Skills />
+            <Footer />
+          </Fade>
+        </Slide>
       </div>
     </div>
   );
