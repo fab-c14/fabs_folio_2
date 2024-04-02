@@ -16,23 +16,23 @@ const Header = () => {
   const [visibleText, setVisibleText] = useState("");
   const [quoteIndex, setQuoteIndex] = useState(0);
 
-  useEffect(() => {
-    const currentQuote = legionQuotes[quoteIndex];
-    if (currentQuote) {
-      const intervalId = setInterval(() => {
-        setVisibleText((prev) => prev + currentQuote[prev.length]);
-        if (visibleText.length === currentQuote.length) {
-          clearInterval(intervalId);
-          setTimeout(() => {
-            setQuoteIndex((prevIndex) => (prevIndex + 1) % legionQuotes.length);
-            setVisibleText("");
-          },80); // Delay before starting the next quote
-        }
-      }, 150); // Adjust the interval for the typing speed
+  // useEffect(() => {
+  //   const currentQuote = legionQuotes[quoteIndex];
+  //   if (currentQuote) {
+  //     const intervalId = setInterval(() => {
+  //       setVisibleText((prev) => prev + currentQuote[prev.length]);
+  //       if (visibleText.length === currentQuote.length) {
+  //         clearInterval(intervalId);
+  //         setTimeout(() => {
+  //           setQuoteIndex((prevIndex) => (prevIndex + 1) % legionQuotes.length);
+  //           setVisibleText("");
+  //         },80); // Delay before starting the next quote
+  //       }
+  //     }, 150); // Adjust the interval for the typing speed
 
-      return () => clearInterval(intervalId);
-    }
-  }, [quoteIndex, visibleText, legionQuotes]);
+  //     return () => clearInterval(intervalId);
+  //   }
+  // }, [quoteIndex, visibleText, legionQuotes]);
 
   return (
     <Container fluid className="tc shadow-5 lh-title helvetica wrap pa-5" id="About">
@@ -50,15 +50,7 @@ const Header = () => {
           </div>
         </Col>
       </Row>
-      <Row>
-        <Col xs={12}>
-          <hr />
-          <small style={{ fontSize: "14px", margin: "-2px", padding: "-3px",fontWeight:"bolder"}} color="green">
-            | {visibleText} |
-          </small>
-          <hr />
-        </Col>
-      </Row>
+     
     </Container>
   );
 };
