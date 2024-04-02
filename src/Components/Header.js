@@ -50,6 +50,8 @@ const Header = () => {
           </div>
         </Col>
       </Row>
+      <hr/>
+      <hr className="pa--bottom-3 ma--bottom-2"/>
      
     </Container>
   );
