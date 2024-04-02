@@ -12,7 +12,7 @@ Welcome to Fab's Folio 2, a personal portfolio website showcasing the creative w
 
 ## Introduction
 
-Fab's Folio 2 is a revamped version of Fab C14's personal portfolio, designed to provide a visually appealing and informative showcase of their skills, projects, and experiences.
+Fab's Folio 2 is a revamped version of Fab C14's personal portfolio, designed to provide a visually appealing and informative showcase of my skills, projects, and experiences.
 
 ## Features
 
