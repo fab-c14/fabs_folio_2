@@ -35,24 +35,30 @@ const Header = () => {
   // }, [quoteIndex, visibleText, legionQuotes]);
 
   return (
-    <Container fluid className="tc shadow-5 lh-title helvetica wrap pa-5" id="About">
+    <Container
+      fluid
+      className='tc shadow-5 lh-title helvetica wrap pa-5'
+      id='About'
+    >
       <Row>
         <Col xs={12}>
-          <h1 className="f1 f-subheadline tracked br3 avenir wrap b">
-            Hello, I'm <strong className="blue hover-light-blue">Faisal</strong> | Creative Developer
+          <h1 className='f1 f-subheadline tracked br3 avenir wrap b'>
+            Hello, I'm <strong className='blue hover-light-blue'>Faisal</strong>{" "}
+            | Creative Developer
           </h1>
         </Col>
       </Row>
       <Row>
         <Col xs={12}>
-          <div className="ttu br4 f4 code tracked-mega pa1">
-            <span className="pointer hover-bg-light-blue pa1 br2">Innovative and Passionate</span>
+          <div className='ttu br4 f4 code tracked-mega pa1'>
+            <span className='pointer hover-bg-light-blue pa1 br2'>
+              simple but different
+            </span>
           </div>
         </Col>
       </Row>
-      <hr/>
-      <hr className="pa--bottom-3 ma--bottom-2"/>
-     
+      <hr />
+      <hr className='pa--bottom-3 ma--bottom-2' />
     </Container>
   );
 };
