@@ -8,14 +8,12 @@ import { Fade } from "react-awesome-reveal";
 const generateDates = (startDate, count) => {
   const dates = [];
   let currentDate = new Date(startDate);
-
   for (let i = 0; i < count; i++) {
     const randomDays = Math.floor(Math.random() * 19) - 6; // Generates a number between -6 and +12
     currentDate.setMonth(currentDate.getMonth() + 1);
     currentDate.setDate(currentDate.getDate() + randomDays);
     dates.push(new Date(currentDate).toLocaleDateString());
   }
-
   return dates;
 };
 
@@ -28,12 +26,12 @@ class Works extends Component {
     return (
       <>
         <div>
-          <Container>
+          <Container className="">
             <h1 className='f1 ttu tc b' style={{ color: this.style }}>
               Projects
             </h1>
-            <Row>
-              <Fade>
+            <Row className="d-flex justify-content-center">
+
                 <Project
                   name='FLAME Project'
                   pic=''
@@ -98,7 +96,7 @@ class Works extends Component {
                   desc='Recognizer is A tool which tells about what an image contains.'
                   date={projectDates[5]}
                 />
-              </Fade>
+
             </Row>
           </Container>
         </div>

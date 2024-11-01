@@ -38,7 +38,7 @@ class Footer extends Component {
               </div>
               <hr width={'50%'} style={{ margin: '1rem auto', border: 'solid red 2px' }} />
               <div className="code f6 fw5">
-                <h6><strong><FaCopyright /> 2023 </strong> - Made With Acknowledgement Of Heart By Faisal Farooq </h6>
+                <h6><strong><FaCopyright /> 2024 </strong> - Made With Acknowledgement Of Heart By Faisal Farooq </h6>
                 Come On Give Me A Star&nbsp;
                 <FaStar /> <a href="https://github.com/fab-c14" target="_new" className="dim green" ><FaGithubSquare size={33} /> </a>
                 <hr />

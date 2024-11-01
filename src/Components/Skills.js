@@ -124,11 +124,11 @@ class Contact extends Component {
       <>
         <Row className='mt5'>
           <Col className='tc'>
-            <h2 className='mb4 f1 fw6'>My Skills</h2>
-            <div className='flex flex-wrap justify-center'>
+            <h2 className='mb4 f1 fw6 '>My Skills</h2>
+            <div className='flex flex-wrap justify-center '>
               {skills.map((skill, index) => (
-                <Slide key={index} direction='down'>
-                <article className='mw5 bg-white br3 pa3 ma2 shadow-5 grow'>
+                <Slide key={index} direction='down' cascade >
+                <article className='mw5 bg-white br3 pa3 ma2 shadow-5 grow b-4 '>
                     <img
                       src={skill.logo}
                       className='db w-100 br2 mb2'
