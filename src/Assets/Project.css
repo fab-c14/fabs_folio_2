@@ -1,4 +1,7 @@
 .linear-bg {
-    background: linear-gradient(to left, #ffd1b6, transparent); /* Adjust colors as needed */
-  }
-  
+  background: url('../Assets/Project.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+
+}

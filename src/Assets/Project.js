@@ -18,9 +18,9 @@ const Project = ({
   }
   return (
     <div className="">
-      <Row className="w-95 d-flex justify-content-center my-3">
-        <Col md={8} className="">
-          <article className="georgia shadow-4 pa3 ">
+      <Row className="w-95 d-flex justify-content-center my-4">
+        <Col md={8} className=" ">
+          <article className="georgia shadow-4 pa3 linear-bg">
             <h2 className="f2 mb-3 tc">{name}</h2>
             <hr />
             {skills && (
