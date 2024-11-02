@@ -1,11 +1,12 @@
-import React from "react";
-import { Component } from "react";
+import React, { Component } from "react";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
+import { Bounce } from "react-awesome-reveal"; // Import animation
 import "tachyons";
-import { Slide } from "react-awesome-reveal";
 
-class Contact extends Component {
+
+class Skills extends Component {
+
   render() {
     const skills = [
       {
@@ -120,31 +121,37 @@ class Contact extends Component {
       },
     ];
 
-    return (
-      <>
-        <Row className='mt5'>
-          <Col className='tc'>
-            <h2 className='mb4 f1 fw6 '>My Skills</h2>
-            <div className='flex flex-wrap justify-center '>
+ 
+      return (
+        <>
+        <Row className="mt5">
+          <Col className="tc">
+            <h2 className="mb4 f1 fw6" style={{ fontFamily: 'Poppins, sans-serif' }}>My Skills</h2>
+            <div className="flex flex-wrap justify-center">
               {skills.map((skill, index) => (
-                <Slide key={index} direction='down' cascade >
-                <article className='mw5 bg-white br3 pa3 ma2 shadow-5 grow b-4 '>
+                <Bounce
+                  key={index}
+                  damping={0.4}
+                  duration={4000}
+                  cascade
+                >
+                  <div className="mw5 bg-white br3 pa3 ma2 shadow-5 pointer grow b-4">
                     <img
                       src={skill.logo}
-                      className='db w-100 br2 mb2'
+                      className="db w-100 br2 mb2"
                       alt={skill.name}
                     />
-                    <h4 className='f5 mb2 dark-gray'>{skill.name}</h4>
-                </article>
-                  </Slide>
+                    <h4 className="f5 mb2 dark-gray" style={{ fontFamily: 'Roboto, sans-serif' }}>{skill.name}</h4>
+                  </div>
+                </Bounce>
               ))}
             </div>
-            <hr className='mt5' />
+            <hr className="mt5" />
           </Col>
         </Row>
       </>
-    );
-  }
-}
+        );
+      }
+    }
 
-export default Contact;
+export default Skills;

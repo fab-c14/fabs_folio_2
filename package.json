@@ -6,6 +6,7 @@
   "main": "index.js",
   "dependencies": {
     "@emotion/react": "^11.11.3",
+    "aos": "^2.3.4",
     "bootstrap": "^5.3.2",
     "particles-bg": "^2.5.5",
     "react": "^18.2.0",
