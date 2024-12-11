@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Container, Row, Col } from "react-bootstrap";
-
+import '../App.css';
 const Header = () => {
   const legionQuotes = [
     "The future is thrilling. And truly fascinating. The past is a burden. And the present is a torment",
@@ -43,7 +43,7 @@ const Header = () => {
       <Row>
         <Col xs={12}>
           <h1 className='f1 f-subheadline tracked br3 avenir wrap b'>
-            Hello, I'm <strong className='blue hover-light-blue'>Faisal</strong>{" "}
+            Hello, I'm <strong className='blue hover-light-blue sick-font'>Faisal Bhat</strong>{" "}
             | Creative Developer
           </h1>
         </Col>

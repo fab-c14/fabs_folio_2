@@ -1,0 +1,12 @@
+@import url("https://fonts.googleapis.com/css2?family=Monoton&family=Quicksand:wght@500;700&display=swap");
+.sick-font{
+    text-align: center;
+    
+    font-family: "Monoton";
+    font-size: 3rem;
+    text-transform: uppercase;
+    font-weight: 40;
+    word-spacing: 30px;
+    letter-spacing: -5px;
+    padding: 2.4rem 0;
+}
