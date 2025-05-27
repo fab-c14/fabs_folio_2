@@ -51,11 +51,12 @@ const App = () => {
         </button>
        
           <Fade cascade fraction={0.1} duration={600} distance={'1px'} style={{ color: isLightMode ? 'black' : 'white', fontSize: '20px' }}>
-            <Header style={{ color: isLightMode ? 'black' : 'white' }} />
+            {/* <Header style={{ color: isLightMode ? 'black' : 'white' }} />
             <About style={{ color: isLightMode ? 'black' : 'white' }} />
             <Works style={{ color: isLightMode ? 'black' : 'red' }} />
             <Skills />
-            <Footer />
+            <Footer /> */}
+            <h1>under maintenance</h1>
           </Fade>
        
       </div>

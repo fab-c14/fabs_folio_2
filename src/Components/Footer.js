@@ -1,69 +1,84 @@
 import React from "react";
-import { Component } from "react";
-import Row from 'react-bootstrap/Row';
-import {
-  FaCopyright,
-  FaFacebook,
-  FaGithub,
-  FaGithubSquare,
-  FaInstagram,
-  FaLinkedin,
-  FaStar
-} from "react-icons/fa";
-import 'tachyons';
-import { Fade, Zoom } from 'react-awesome-reveal';
+import { FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa";
+import { motion } from "framer-motion";
 
-class Footer extends Component {
-  render() {
-    return (
-      <>
-        <Row className="text-center mt-5">
-          <div className="fw3 white bg-black b--green b3 br4">
-            <Zoom>
-              <h1 className="fw4 bg-light-green br2 pa2 ma3 near-black">Contact Me</h1>
-            </Zoom>
-
-            <Fade cascade damping={0.3}>
-              <div className="glow">
-                <a href="https://instagram.com/_fabc14?igshid=ZDc4ODBmNjlmNQ==" target="_new" className="red dim">
-                  <FaInstagram size={35} />
-                </a>&nbsp;&nbsp;&nbsp;
-                <a href="https://github.com/fab-c14" target="_new" className="white dim">
-                  <FaGithub size={35} />
-                </a>&nbsp;&nbsp;&nbsp;
-                <a href="https://www.facebook.com/fabc.love.to.thunder" target="_new" className="dim light-blue">
-                  <FaFacebook size={35} />
-                </a>&nbsp;&nbsp;&nbsp;
-                <a href="https://www.linkedin.com/in/faisal-ahmad-bhat-aaba29229" target="_new" className="dim">
-                  <FaLinkedin size={35} />
-                </a>
-              </div>
-            </Fade>
-
-            <Fade duration={1000}>
-              <hr width={'50%'} style={{ margin: '1rem auto', border: 'solid red 2px' }} />
-            </Fade>
-
-            <Fade delay={500}>
-              <div className="code f6 fw5">
-                <h6>
-                  <strong><FaCopyright /> 2024 </strong> - Made With Acknowledgement Of Heart By Faisal Farooq
-                </h6>
-                <p>
-                  Come On Give Me A Star&nbsp;
-                  <FaStar /> <a href="https://github.com/fab-c14" target="_new" className="dim green">
-                    <FaGithubSquare size={33} />
-                  </a>
-                </p>
-                <hr />
-                <br />
-              </div>
-            </Fade>
-          </div>
-        </Row>
-      </>
-    )
+const socials = [
+  {
+    icon: <FaGithub />,
+    url: "https://github.com/fab-c14",
+    label: "GitHub"
+  },
+  {
+    icon: <FaLinkedin />,
+    url: "https://www.linkedin.com/in/faisal-ahmad-bhat-aaba29229",
+    label: "LinkedIn"
+  },
+  {
+    icon: <FaTwitter />,
+    url: "https://twitter.com/your_handle",
+    label: "Twitter"
   }
-}
+];
 
-export default Footer;
+export default function Footer() {
+  return (
+    <footer
+      style={{
+        width: "100%",
+        padding: "2.2rem 0 1.2rem 0",
+        background: "linear-gradient(90deg, #23263a, #181c27 50%, #eb144c22 100%)",
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+        borderTopLeftRadius: 24,
+        borderTopRightRadius: 24,
+        marginTop: "4rem",
+        boxShadow: "0 -2px 18px #eb144c33",
+        position: "relative",
+        zIndex: 2
+      }}
+    >
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+        style={{ display: "flex", gap: "1.6rem", marginBottom: "1rem" }}
+      >
+        {socials.map((s, idx) => (
+          <motion.a
+            key={idx}
+            href={s.url}
+            aria-label={s.label}
+            target="_blank"
+            rel="noopener noreferrer"
+            whileHover={{
+              scale: 1.17,
+              color: "#eb144c",
+              rotate: idx % 2 === 0 ? -9 : 9
+            }}
+            style={{
+              color: "#8ED1FC",
+              fontSize: "2rem",
+              transition: "color 0.3s, transform 0.21s",
+              display: "inline-block"
+            }}
+          >
+            {s.icon}
+          </motion.a>
+        ))}
+      </motion.div>
+      <div
+        style={{
+          color: "#b0b8d9",
+          fontSize: "1.05rem",
+          fontWeight: 500,
+          letterSpacing: "1px",
+          textAlign: "center",
+          userSelect: "none"
+        }}
+      >
+        &copy; {new Date().getFullYear()} Faisal Ahmad Bhat. All rights reserved.
+      </div>
+    </footer>
+  );
+}

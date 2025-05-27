@@ -1,80 +1,57 @@
-import React from "react";
-import { Row, Col, Button } from "react-bootstrap";
-import "tachyons";
-import "./Project.css";
+import { Card, CardContent, CardMedia, Typography, Button, Stack } from '@mui/material';
+import { motion } from 'framer-motion';
+import { FaGithub, FaExternalLinkAlt } from 'react-icons/fa';
 
-const Project = ({
+export default function Project({
   name,
   pic,
   sourceCode,
   liveLink,
   desc,
-  picAlt,
   skills,
   date,
   stackIcons = [],
-}) => {
-  if (!pic || pic.trim() === "") {
-    pic = picAlt;
-  }
+}) {
   return (
-    <div className="card project-card">
-      <Row className="w-100 d-flex align-items-center">
-        <Col md={5} className="p-0">
-          <img
-            src={pic}
-            alt={name}
-            className="img-fluid rounded shadow-sm project-img"
-            style={{ width: "100%", height: "180px", objectFit: "cover" }}
-          />
-        </Col>
-        <Col md={7}>
-          <h2 className="f3 mb-2">{name}</h2>
-          <div className="d-flex flex-wrap mb-2">
+    <motion.div whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.98 }}>
+      <Card sx={{
+        display: 'flex',
+        mb: 3,
+        borderRadius: 3,
+        boxShadow: 6,
+        bgcolor: 'background.paper',
+        alignItems: 'stretch',
+        minHeight: 200
+      }}>
+        <CardMedia
+          component="img"
+          image={pic}
+          alt={name}
+          sx={{ width: 180, objectFit: 'cover' }}
+        />
+        <CardContent sx={{ flex: 1 }}>
+          <Typography variant="h5" gutterBottom>{name}</Typography>
+          <Stack direction="row" spacing={1} sx={{ mb: 1 }}>
             {stackIcons.map((icon, idx) => (
-              <img
-                key={idx}
-                src={icon}
-                alt="stack"
-                style={{ height: "28px", marginRight: "8px" }}
-              />
+              <img key={idx} src={icon} alt="" style={{ height: 28 }} />
             ))}
-          </div>
-          {skills && (
-            <div className="mb-2">
-              <strong>Skills: </strong>
-              {skills}
-            </div>
-          )}
-          <p className="mb-2">{desc}</p>
-          <p className="mb-3" style={{ color: "var(--muted)" }}>
-            <strong>Date:</strong> {date}
-          </p>
-          <div>
+          </Stack>
+          <Typography variant="body2" color="text.secondary">{desc}</Typography>
+          <Typography variant="caption" color="text.secondary" display="block" sx={{ my: 1 }}>{skills} | {date}</Typography>
+          <Stack direction="row" spacing={1}>
             {liveLink && (
-              <Button
-                variant="primary"
-                target="_blank"
-                className="me-2"
-                href={liveLink}
-              >
+              <Button size="small" href={liveLink} target="_blank" startIcon={<FaExternalLinkAlt />}>
                 Live
               </Button>
             )}
             {sourceCode && (
-              <Button
-                variant="outline-light"
-                target="_blank"
-                href={sourceCode}
-              >
+              <Button size="small" href={sourceCode} target="_blank" startIcon={<FaGithub />}>
                 Code
               </Button>
             )}
-          </div>
-        </Col>
-      </Row>
-    </div>
+          </Stack>
+        </CardContent>
+      </Card>
+    </motion.div>
   );
-};
-
-export default Project;
+}

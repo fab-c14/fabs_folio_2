@@ -1,157 +1,66 @@
-import React, { Component } from "react";
-import Row from "react-bootstrap/Row";
-import Col from "react-bootstrap/Col";
-import { Bounce } from "react-awesome-reveal"; // Import animation
-import "tachyons";
+import React from "react";
+import { Container, Grid, Chip, Typography, Box } from "@mui/material";
+import { motion } from "framer-motion";
+import { FaReact, FaNodeJs, FaPython, FaHtml5, FaCss3Alt, FaJs, FaGithub, FaGitAlt } from "react-icons/fa";
+import { SiMongodb, SiExpress, SiBootstrap, SiRedux, SiDjango } from "react-icons/si";
 
+const skills = [
+  { icon: <FaReact color="#61dafb" />, label: "React" },
+  { icon: <FaNodeJs color="#3c873a" />, label: "Node.js" },
+  { icon: <SiExpress color="#000" />, label: "Express" },
+  { icon: <SiMongodb color="#47a248" />, label: "MongoDB" },
+  { icon: <FaPython color="#3776ab" />, label: "Python" },
+  { icon: <SiDjango color="#092e20" />, label: "Django" },
+  { icon: <FaJs color="#f7df1e" />, label: "JavaScript" },
+  { icon: <FaHtml5 color="#e44d26" />, label: "HTML5" },
+  { icon: <FaCss3Alt color="#1572b6" />, label: "CSS3" },
+  { icon: <SiBootstrap color="#563d7c" />, label: "Bootstrap" },
+  { icon: <SiRedux color="#764abc" />, label: "Redux" },
+  { icon: <FaGitAlt color="#f34f29" />, label: "Git" },
+  { icon: <FaGithub color="#24292e" />, label: "GitHub" },
+];
 
-class Skills extends Component {
-
-  render() {
-    const skills = [
-      {
-        name: "React",
-        logo:
-          "https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=react&logoColor=white",
-      },
-      {
-        name: "JavaScript",
-        logo:
-          "https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black",
-      },
-      {
-        name: "HTML",
-        logo:
-          "https://img.shields.io/badge/HTML-E34F26?style=for-the-badge&logo=html5&logoColor=white",
-      },
-      {
-        name: "CSS",
-        logo:
-          "https://img.shields.io/badge/CSS-1572B6?style=for-the-badge&logo=css3&logoColor=white",
-      },
-      {
-        name: "Bootstrap",
-        logo:
-          "https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white",
-      },
-      {
-        name: "Node.js",
-        logo:
-          "https://img.shields.io/badge/Node.js-43853D?style=for-the-badge&logo=node.js&logoColor=white",
-      },
-      {
-        name: "Express.js",
-        logo:
-          "https://img.shields.io/badge/Express.js-000000?style=for-the-badge&logo=express&logoColor=white",
-      },
-      {
-        name: "MongoDB",
-        logo:
-          "https://img.shields.io/badge/MongoDB-47A248?style=for-the-badge&logo=mongodb&logoColor=white",
-      },
-      {
-        name: "AWS",
-        logo:
-          "https://img.shields.io/badge/AWS-232F3E?style=for-the-badge&logo=amazon-aws&logoColor=white",
-      },
-      {
-        name: "Azure",
-        logo:
-          "https://img.shields.io/badge/Azure-0089D6?style=for-the-badge&logo=microsoft-azure&logoColor=white",
-      },
-      {
-        name: "Python",
-        logo:
-          "https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white",
-      },
-      {
-        name: "NumPy",
-        logo:
-          "https://img.shields.io/badge/NumPy-013243?style=for-the-badge&logo=numpy&logoColor=white",
-      },
-      {
-        name: "Pandas",
-        logo:
-          "https://img.shields.io/badge/Pandas-150458?style=for-the-badge&logo=pandas&logoColor=white",
-      },
-      {
-        name: "Matplotlib",
-        logo:
-          "https://img.shields.io/badge/Matplotlib-3776AB?style=for-the-badge&logo=python&logoColor=white",
-      },
-      {
-        name: "Seaborn",
-        logo:
-          "https://img.shields.io/badge/Seaborn-013243?style=for-the-badge&logo=python&logoColor=white",
-      },
-      {
-        name: "Tachyons",
-        logo:
-          "https://img.shields.io/badge/Tachyons-008080?style=for-the-badge&logo=tachyons&logoColor=white",
-      },
-      {
-        name: "jQuery",
-        logo:
-          "https://img.shields.io/badge/jQuery-0769AD?style=for-the-badge&logo=jquery&logoColor=white",
-      },
-      {
-        name: "C",
-        logo:
-          "https://img.shields.io/badge/C-A8B9CC?style=for-the-badge&logo=c&logoColor=white",
-      },
-      {
-        name: "C++",
-        logo:
-          "https://img.shields.io/badge/C++-00599C?style=for-the-badge&logo=cplusplus&logoColor=white",
-      },
-      {
-        name: "SQL",
-        logo:
-          "https://img.shields.io/badge/SQL-4479A1?style=for-the-badge&logo=postgresql&logoColor=white",
-      },
-      {
-        name: "MySQL",
-        logo:
-          "https://img.shields.io/badge/MySQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white",
-      },
-      {
-        name: "Heroku",
-        logo:
-          "https://img.shields.io/badge/Heroku-430098?style=for-the-badge&logo=heroku&logoColor=white",
-      },
-    ];
-
- 
-      return (
-        <>
-        <Row className="mt5">
-          <Col className="tc">
-            <h2 className="mb4 f1 fw6" style={{ fontFamily: 'Poppins, sans-serif' }}>My Skills</h2>
-            <div className="flex flex-wrap justify-center">
-              {skills.map((skill, index) => (
-                <Bounce
-                  key={index}
-                  damping={0.4}
-                  duration={4000}
-                  cascade
-                >
-                  <div className="mw5 bg-white br3 pa3 ma2 shadow-5 pointer grow b-4">
-                    <img
-                      src={skill.logo}
-                      className="db w-100 br2 mb2"
-                      alt={skill.name}
-                    />
-                    <h4 className="f5 mb2 dark-gray" style={{ fontFamily: 'Roboto, sans-serif' }}>{skill.name}</h4>
-                  </div>
-                </Bounce>
-              ))}
-            </div>
-            <hr className="mt5" />
-          </Col>
-        </Row>
-      </>
-        );
-      }
-    }
-
-export default Skills;
+export default function Skills() {
+  return (
+    <Container sx={{ py: 6 }}>
+      <motion.div
+        initial={{ opacity: 0, y: 40 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8 }}
+      >
+        <Typography variant="h3" align="center" sx={{ fontWeight: 700, mb: 4, color: "#eb144c" }}>
+          My Tech Stack
+        </Typography>
+        <Grid container spacing={3} justifyContent="center">
+          {skills.map((skill, idx) => (
+            <Grid item key={skill.label}>
+              <motion.div
+                whileHover={{ scale: 1.12, boxShadow: "0 0 16px #eb144c" }}
+                transition={{ type: "spring", stiffness: 300 }}
+              >
+                <Chip
+                  icon={skill.icon}
+                  label={skill.label}
+                  sx={{
+                    px: 2,
+                    py: 1,
+                    fontSize: "1.1rem",
+                    bgcolor: "#23263a",
+                    color: "#f7f7fa",
+                    boxShadow: "0 4px 12px rgba(31,38,135,0.15)",
+                    borderRadius: 2,
+                  }}
+                />
+              </motion.div>
+            </Grid>
+          ))}
+        </Grid>
+        <Box sx={{ mt: 4, textAlign: "center", color: "#b0b4c1" }}>
+          <Typography variant="body1">
+            Always learning and building with new tools!
+          </Typography>
+        </Box>
+      </motion.div>
+    </Container>
+  );
+}
