@@ -12,52 +12,67 @@ const Project = ({
   picAlt,
   skills,
   date,
+  stackIcons = [],
 }) => {
-  if (pic === "" || pic === " ") {
-    pic = picAlt; // choosing a random picture from the web
+  if (!pic || pic.trim() === "") {
+    pic = picAlt;
   }
   return (
-    <div className="">
-      <Row className="w-95 d-flex justify-content-center my-4">
-        <Col md={8} className=" ">
-          <article className="georgia shadow-4 pa3 linear-bg">
-            <h2 className="f2 mb-3 tc">{name}</h2>
-            <hr />
-            {skills && (
-              <div className="mb-3">
-                <strong>Skills Used: </strong>
-                {skills}
-              </div>
-            )}
-            <p>{desc}</p>
-            <p className="mt-3">
-              <strong>Date: </strong>
-              {date}
-            </p>
+    <div className="card project-card">
+      <Row className="w-100 d-flex align-items-center">
+        <Col md={5} className="p-0">
+          <img
+            src={pic}
+            alt={name}
+            className="img-fluid rounded shadow-sm project-img"
+            style={{ width: "100%", height: "180px", objectFit: "cover" }}
+          />
+        </Col>
+        <Col md={7}>
+          <h2 className="f3 mb-2">{name}</h2>
+          <div className="d-flex flex-wrap mb-2">
+            {stackIcons.map((icon, idx) => (
+              <img
+                key={idx}
+                src={icon}
+                alt="stack"
+                style={{ height: "28px", marginRight: "8px" }}
+              />
+            ))}
+          </div>
+          {skills && (
+            <div className="mb-2">
+              <strong>Skills: </strong>
+              {skills}
+            </div>
+          )}
+          <p className="mb-2">{desc}</p>
+          <p className="mb-3" style={{ color: "var(--muted)" }}>
+            <strong>Date:</strong> {date}
+          </p>
+          <div>
             {liveLink && (
               <Button
                 variant="primary"
-                target="_new"
-                className="btnFillup2 liquidbg f5 mr-2 b"
+                target="_blank"
+                className="me-2"
                 href={liveLink}
               >
-                See Live
+                Live
               </Button>
             )}
-            {"      "}
-            <Button
-              variant="outline-light"
-              target="_new"
-              className="btnFillup2 l f5 red b"
-              href={sourceCode}
-            >
-              Source Code
-            </Button>
-          </article>
+            {sourceCode && (
+              <Button
+                variant="outline-light"
+                target="_blank"
+                href={sourceCode}
+              >
+                Code
+              </Button>
+            )}
+          </div>
         </Col>
-       
       </Row>
-      <hr />
     </div>
   );
 };

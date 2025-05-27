@@ -1,26 +1,49 @@
-
-
-button {
-  cursor: pointer;
+:root {
+  --main-bg: #181c27;
+  --accent-bg: #23263a;
+  --primary: #eb144c;
+  --secondary: #8ED1FC;
+  --text: #f7f7fa;
+  --muted: #b0b4c1;
+  --card-bg: #23263a;
+  --shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  --radius: 18px;
 }
 
-
-
-
-/* Basic styling for the root element */
 body {
-font-family: "Courier New", Courier, monospace;
+  font-family: "Poppins", "Roboto", "Montserrat", "Open Sans", "Lora", "Arial", sans-serif;
+  background: linear-gradient(135deg, var(--main-bg) 0%, var(--accent-bg) 100%);
+  color: var(--text);
   margin: 0;
   padding: 0;
-  background-color: #f0f0f0; /* Set your desired background color */
+  min-height: 100vh;
+  transition: background 0.6s;
 }
 
-/* .container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 20px;
-} */
+a, button {
+  transition: color 0.2s, background 0.2s, box-shadow 0.2s;
+}
 
-/* Add specific styles to your components as needed */
+h1, h2, h3, h4, h5, h6 {
+  color: var(--primary);
+  letter-spacing: 2px;
+}
 
-/* For responsive design, consider using media queries and adjusting styles based on screen size */
+.card {
+  background: var(--card-bg);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 2rem;
+  margin: 1.5rem;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.card:hover {
+  transform: translateY(-6px) scale(1.03);
+  box-shadow: 0 16px 40px 0 rgba(31, 38, 135, 0.45);
+}
+
+@media (max-width: 768px) {
+  .card { padding: 1rem; margin: 1rem; }
+  body { font-size: 16px; }
+}

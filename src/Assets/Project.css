@@ -1,7 +1,16 @@
-.linear-bg {
-  background: url('../Assets/Project.svg');
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
+.project-card {
+  background: linear-gradient(120deg, #23263a 60%, #2e3251 100%);
+  border-radius: 20px;
+  box-shadow: var(--shadow);
+  transition: box-shadow 0.2s, transform 0.2s;
+}
 
+.project-card:hover {
+  box-shadow: 0 8px 40px 0 rgba(235, 20, 76, 0.25);
+  transform: translateY(-6px) scale(1.04);
+}
+
+.project-img {
+  border-radius: 20px 0 0 20px;
+  object-fit: cover;
 }
