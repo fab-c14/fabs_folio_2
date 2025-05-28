@@ -1,66 +1,108 @@
 import React from "react";
-import { Container, Grid, Chip, Typography, Box } from "@mui/material";
+import { Box, Typography, Grid, Paper, Chip, Container } from "@mui/material";
 import { motion } from "framer-motion";
-import { FaReact, FaNodeJs, FaPython, FaHtml5, FaCss3Alt, FaJs, FaGithub, FaGitAlt } from "react-icons/fa";
-import { SiMongodb, SiExpress, SiBootstrap, SiRedux, SiDjango } from "react-icons/si";
+import {
+  FaReact, FaNodeJs, FaPython, FaHtml5, FaCss3Alt, FaJs, FaGithub, FaGitAlt
+} from "react-icons/fa";
+import {
+  SiMongodb, SiExpress, SiBootstrap, SiRedux, SiDjango
+} from "react-icons/si";
 
 const skills = [
-  { icon: <FaReact color="#61dafb" />, label: "React" },
-  { icon: <FaNodeJs color="#3c873a" />, label: "Node.js" },
-  { icon: <SiExpress color="#000" />, label: "Express" },
-  { icon: <SiMongodb color="#47a248" />, label: "MongoDB" },
-  { icon: <FaPython color="#3776ab" />, label: "Python" },
-  { icon: <SiDjango color="#092e20" />, label: "Django" },
-  { icon: <FaJs color="#f7df1e" />, label: "JavaScript" },
-  { icon: <FaHtml5 color="#e44d26" />, label: "HTML5" },
-  { icon: <FaCss3Alt color="#1572b6" />, label: "CSS3" },
-  { icon: <SiBootstrap color="#563d7c" />, label: "Bootstrap" },
-  { icon: <SiRedux color="#764abc" />, label: "Redux" },
-  { icon: <FaGitAlt color="#f34f29" />, label: "Git" },
-  { icon: <FaGithub color="#24292e" />, label: "GitHub" },
+  { icon: <FaReact size={38} color="#61dafb" />, label: "React" },
+  { icon: <FaNodeJs size={38} color="#3c873a" />, label: "Node.js" },
+  { icon: <SiExpress size={38} color="#000" />, label: "Express" },
+  { icon: <SiMongodb size={38} color="#47a248" />, label: "MongoDB" },
+  { icon: <FaPython size={38} color="#3776ab" />, label: "Python" },
+  { icon: <SiDjango size={38} color="#092e20" />, label: "Django" },
+  { icon: <FaJs size={38} color="#f7df1e" />, label: "JavaScript" },
+  { icon: <FaHtml5 size={38} color="#e44d26" />, label: "HTML5" },
+  { icon: <FaCss3Alt size={38} color="#1572b6" />, label: "CSS3" },
+  { icon: <SiBootstrap size={38} color="#563d7c" />, label: "Bootstrap" },
+  { icon: <SiRedux size={38} color="#764abc" />, label: "Redux" },
+  { icon: <FaGitAlt size={38} color="#f34f29" />, label: "Git" },
+  { icon: <FaGithub size={38} color="#24292e" />, label: "GitHub" }
 ];
+
+const container = {
+  hidden: {},
+  visible: {
+    transition: {
+      staggerChildren: 0.09
+    }
+  }
+};
+
+const item = {
+  hidden: { opacity: 0, y: 24 },
+  visible: { opacity: 1, y: 0 }
+};
 
 export default function Skills() {
   return (
-    <Container sx={{ py: 6 }}>
-      <motion.div
-        initial={{ opacity: 0, y: 40 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8 }}
-      >
-        <Typography variant="h3" align="center" sx={{ fontWeight: 700, mb: 4, color: "#eb144c" }}>
+    <Box sx={{ bgcolor: "background.default", py: { xs: 6, md: 10 } }}>
+      <Container maxWidth="md">
+        <Typography
+          variant="h3"
+          align="center"
+          sx={{ fontWeight: 800, mb: 4, color: "#eb144c", letterSpacing: 2 }}
+        >
           My Tech Stack
         </Typography>
-        <Grid container spacing={3} justifyContent="center">
-          {skills.map((skill, idx) => (
-            <Grid item key={skill.label}>
-              <motion.div
-                whileHover={{ scale: 1.12, boxShadow: "0 0 16px #eb144c" }}
-                transition={{ type: "spring", stiffness: 300 }}
-              >
-                <Chip
-                  icon={skill.icon}
-                  label={skill.label}
-                  sx={{
-                    px: 2,
-                    py: 1,
-                    fontSize: "1.1rem",
-                    bgcolor: "#23263a",
-                    color: "#f7f7fa",
-                    boxShadow: "0 4px 12px rgba(31,38,135,0.15)",
-                    borderRadius: 2,
-                  }}
-                />
-              </motion.div>
-            </Grid>
-          ))}
-        </Grid>
-        <Box sx={{ mt: 4, textAlign: "center", color: "#b0b4c1" }}>
-          <Typography variant="body1">
-            Always learning and building with new tools!
-          </Typography>
+        <motion.div
+          variants={container}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+        >
+          <Grid container spacing={4} justifyContent="center">
+            {skills.map((skill, idx) => (
+              <Grid item xs={6} sm={4} md={3} key={skill.label}>
+                <motion.div variants={item}>
+                  <Paper
+                    elevation={4}
+                    sx={{
+                      p: 3,
+                      borderRadius: 5,
+                      display: "flex",
+                      flexDirection: "column",
+                      alignItems: "center",
+                      gap: 1.5,
+                      bgcolor: "#23263a",
+                      transition: "transform 0.2s, box-shadow 0.2s",
+                      "&:hover": {
+                        transform: "scale(1.09)",
+                        boxShadow: "0 4px 18px #eb144c55"
+                      }
+                    }}
+                  >
+                    {skill.icon}
+                    <Typography variant="subtitle1" sx={{ color: "#b0b4c1", fontWeight: 700 }}>
+                      {skill.label}
+                    </Typography>
+                  </Paper>
+                </motion.div>
+              </Grid>
+            ))}
+          </Grid>
+        </motion.div>
+        <Box sx={{ mt: 6, textAlign: "center" }}>
+          <Chip
+            label="Always learning and building with new tools!"
+            color="secondary"
+            sx={{
+              fontWeight: 600,
+              fontSize: "1.09rem",
+              px: 2.5,
+              py: 2,
+              bgcolor: "#181c27",
+              color: "#8ED1FC",
+              borderRadius: 2,
+              mt: 2
+            }}
+          />
         </Box>
-      </motion.div>
-    </Container>
+      </Container>
+    </Box>
   );
 }

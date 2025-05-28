@@ -1,66 +1,112 @@
-import React, { useState, useEffect } from "react";
-import { Container, Row, Col } from "react-bootstrap";
-import '../App.css';
-const Header = () => {
-  const legionQuotes = [
-    "The future is thrilling. And truly fascinating. The past is a burden. And the present is a torment",
-    "Perhaps there is a way to redeem my vile self",
-    "I am loyal to my destiny",
-    "Their voices will never be silenced",
-    "Cease the excruciating cacophony",
-    "The shadow legion is at your command",
-    "Heavy is the head that wears the crown",
-    "Heavy Are The Hands That Hold The Cursed Sword",
-  ];
+import React from "react";
+import { motion } from "framer-motion";
 
-  const [visibleText, setVisibleText] = useState("");
-  const [quoteIndex, setQuoteIndex] = useState(0);
-
-  // useEffect(() => {
-  //   const currentQuote = legionQuotes[quoteIndex];
-  //   if (currentQuote) {
-  //     const intervalId = setInterval(() => {
-  //       setVisibleText((prev) => prev + currentQuote[prev.length]);
-  //       if (visibleText.length === currentQuote.length) {
-  //         clearInterval(intervalId);
-  //         setTimeout(() => {
-  //           setQuoteIndex((prevIndex) => (prevIndex + 1) % legionQuotes.length);
-  //           setVisibleText("");
-  //         },80); // Delay before starting the next quote
-  //       }
-  //     }, 150); // Adjust the interval for the typing speed
-
-  //     return () => clearInterval(intervalId);
-  //   }
-  // }, [quoteIndex, visibleText, legionQuotes]);
-
+export default function Header() {
   return (
-    <Container
-      fluid
-      className='tc shadow-5 lh-title helvetica wrap pa-5'
-      id='About'
+    <motion.header
+      initial={{ y: -40, opacity: 0 }}
+      animate={{ y: 0, opacity: 1 }}
+      transition={{ duration: 0.7, type: "spring" }}
+      style={{
+        width: "96vw",
+        maxWidth: 1300,
+        margin: "2.2rem auto 1.8rem auto",
+        borderRadius: "2.4rem",
+        background: "rgba(35,38,58,0.82)",
+        boxShadow: "0 8px 32px #eb144c44, 0 1.5px 12px #8ED1FC22",
+        border: "1.5px solid #eb144c33",
+        position: "relative",
+        zIndex: 10,
+        backdropFilter: "blur(12px)",
+      }}
     >
-      <Row>
-        <Col xs={12}>
-          <h1 className='f1 f-subheadline tracked br3 avenir wrap b'>
-            Hello, I'm <strong className='blue hover-light-blue sick-font'>Faisal Bhat</strong>{" "}
-            | Creative Developer
-          </h1>
-        </Col>
-      </Row>
-      <Row>
-        <Col xs={12}>
-          <div className='ttu br4 f4 code tracked-mega pa1'>
-            <span className='pointer hover-bg-light-blue pa1 br2'>
-              simple but different
-            </span>
-          </div>
-        </Col>
-      </Row>
-      <hr />
-      <hr className='pa--bottom-3 ma--bottom-2' />
-    </Container>
+      <nav
+        style={{
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "space-between",
+          padding: "1.45rem 3vw",
+          gap: "1.5rem",
+          flexWrap: "wrap"
+        }}
+      >
+        <div style={{ display: "flex", alignItems: "center", gap: "0.7rem" }}>
+          <span
+            style={{
+              fontWeight: 900,
+              fontSize: "2.25rem",
+              color: "#eb144c",
+              letterSpacing: "2px",
+              textShadow: "0 2px 8px #eb144c40, 0 1px 0 #23263a",
+              background:
+                "linear-gradient(90deg, #eb144c 20%, #8ED1FC 80%)",
+              WebkitBackgroundClip: "text",
+              WebkitTextFillColor: "transparent",
+              display: "inline-block",
+              lineHeight: "1"
+            }}
+          >
+            Faisal Bhat
+          </span>
+          <span
+            style={{
+              display: "inline-block",
+              width: 42,
+              height: 6,
+              borderRadius: 8,
+              background: "linear-gradient(90deg, #eb144c, #8ED1FC)",
+              marginLeft: 10,
+            }}
+          />
+        </div>
+        <div
+          style={{
+            display: "flex",
+            gap: "2.1rem",
+            alignItems: "center",
+            flexWrap: "wrap"
+          }}
+        >
+          <a
+            href="#about"
+            style={navLinkStyle}
+          >
+            About
+          </a>
+          <a
+            href="#skills"
+            style={navLinkStyle}
+          >
+            Skills
+          </a>
+          <a
+            href="#works"
+            style={navLinkStyle}
+          >
+            Works
+          </a>
+          <a
+            href="#footer"
+            style={navLinkStyle}
+          >
+            Contact
+          </a>
+        </div>
+      </nav>
+    </motion.header>
   );
-};
+}
 
-export default Header;
+const navLinkStyle = {
+  color: "#e2e7fa",
+  fontWeight: 600,
+  fontSize: "1.08rem",
+  letterSpacing: "0.5px",
+  textDecoration: "none",
+  position: "relative",
+  transition: "color 0.19s",
+  padding: "0.2rem 0.2rem",
+  borderRadius: "7px",
+  lineHeight: 1.3,
+  background: "transparent"
+};

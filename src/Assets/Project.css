@@ -1,16 +1,181 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:900,700,400&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Fira+Mono:400,700&display=swap');
+
+.projects-section {
+  background: #101012;
+  min-height: 100vh;
+  padding: 48px 0 60px 0;
+  width: 100%;
+}
+
+.projects-title {
+  font-family: 'Montserrat', sans-serif;
+  color: #eb144c;
+  font-size: 2.6rem;
+  font-weight: 900;
+  text-align: center;
+  letter-spacing: 2px;
+  margin-bottom: 36px;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  gap: 36px;
+  max-width: 1250px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
 .project-card {
-  background: linear-gradient(120deg, #23263a 60%, #2e3251 100%);
-  border-radius: 20px;
-  box-shadow: var(--shadow);
+  background: #000;
+  border-radius: 22px;
+  box-shadow: 0 8px 40px 0 rgba(235, 20, 76, 0.12), 0 2px 8px #000a;
+  display: flex;
+  flex-direction: column;
+  min-height: 470px;
+  max-height: 470px;
   transition: box-shadow 0.2s, transform 0.2s;
 }
 
 .project-card:hover {
-  box-shadow: 0 8px 40px 0 rgba(235, 20, 76, 0.25);
-  transform: translateY(-6px) scale(1.04);
+  transform: scale(1.025) translateY(-4px);
+  box-shadow: 0 16px 48px 0 #eb144c55, 0 2px 8px #0008;
 }
 
 .project-img {
-  border-radius: 20px 0 0 20px;
+  width: 100%;
+  height: 170px;
   object-fit: cover;
+  border-radius: 22px 22px 0 0;
+  background: #181c27;
+}
+
+.project-body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 24px 22px 16px 22px;
+}
+
+.project-name {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: #fff;
+  margin-bottom: 8px;
+}
+
+.project-desc {
+  font-family: 'Roboto', sans-serif;
+  color: #b0b8d9;
+  font-size: 1rem;
+  margin-bottom: 14px;
+  flex-grow: 1;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.project-skills, .project-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  margin-bottom: 7px;
+}
+
+.project-skill {
+  background: #181c27;
+  color: #8ED1FC;
+  font-family: 'Fira Mono', monospace;
+  font-weight: 700;
+  font-size: 0.92rem;
+  border-radius: 6px;
+  padding: 5px 11px;
+}
+
+.project-tag {
+  background: #eb144c22;
+  color: #eb144c;
+  font-family: 'Fira Mono', monospace;
+  font-weight: 700;
+  font-size: 0.89rem;
+  border-radius: 5px;
+  padding: 4px 10px;
+}
+
+.project-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 18px;
+}
+
+.project-date {
+  color: #8ED1FC;
+  font-family: 'Roboto', sans-serif;
+  font-size: 0.98rem;
+  font-weight: 600;
+}
+
+.project-links {
+  display: flex;
+  gap: 10px;
+}
+
+.project-btn {
+  text-decoration: none;
+  border: none;
+  outline: none;
+  font-family: 'Roboto', sans-serif;
+  font-size: 0.99rem;
+  font-weight: 700;
+  border-radius: 7px;
+  padding: 7px 16px;
+  display: inline-block;
+  transition: background 0.18s, color 0.18s;
+}
+
+.project-btn-live {
+  background: #eb144c;
+  color: #fff;
+}
+
+.project-btn-live:hover {
+  background: #ff356a;
+}
+
+.project-btn-code {
+  background: transparent;
+  color: #8ED1FC;
+  border: 2px solid #8ED1FC;
+}
+
+.project-btn-code:hover {
+  background: #8ED1FC;
+  color: #000;
+}
+
+@media (max-width: 900px) {
+  .project-card {
+    min-height: 460px;
+    max-height: 460px;
+  }
+}
+
+@media (max-width: 600px) {
+  .projects-grid {
+    grid-template-columns: 1fr;
+    gap: 22px;
+    padding: 0 7px;
+  }
+  .project-card {
+    min-height: 420px;
+    max-height: 420px;
+  }
+  .project-body {
+    padding: 16px 11px 12px 11px;
+  }
 }

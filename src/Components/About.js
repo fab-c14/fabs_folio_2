@@ -1,171 +1,112 @@
 import React from "react";
+import { Box, Typography, Stack, Paper, Chip, Button, Container, Divider, Avatar } from "@mui/material";
 import { motion } from "framer-motion";
-import sample_resume from "../Assets/fabs_resume_latest.pdf";
-import back from "../Assets/back.png";
+import { FaArrowRight } from "react-icons/fa";
+
+const highlights = [
+  "Always exploring new stacks & tools",
+  "Passionate about web, AI, and open-source",
+  "Open for collaboration & freelance work"
+];
 
 export default function About() {
   return (
-    <section
-      id="about"
-      style={{
-        minHeight: "90vh",
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
-        background: "radial-gradient(circle at 65% 40%, #eb144c22 0%, #23263a 100%)",
-        position: "relative",
-        zIndex: 1,
-        overflow: "hidden",
-      }}
-    >
-      {/* Animated background glow */}
-      <motion.div
-        initial={{ opacity: 0, scale: 0.7 }}
-        animate={{ opacity: 1, scale: 1.3 }}
-        transition={{ duration: 2, repeat: Infinity, repeatType: "reverse", ease: "easeInOut" }}
-        style={{
-          position: "absolute",
-          width: 600,
-          height: 600,
-          left: "60%",
-          top: "10%",
-          pointerEvents: "none",
-          zIndex: 0,
-          background: "radial-gradient(circle, #eb144c88 0%, transparent 70%)",
-          filter: "blur(40px)",
-        }}
-      />
-      <motion.div
-        initial={{ opacity: 0, y: 80 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8 }}
-        style={{
-          background: "rgba(35,38,58,0.88)",
-          boxShadow: "0 8px 42px 0 #eb144c44, 0 2px 8px #0004",
-          borderRadius: "38px",
-          maxWidth: 1200,
-          width: "94vw",
-          minHeight: 450,
-          padding: "3.5rem 3vw",
-          display: "flex",
-          gap: "3.5rem",
-          alignItems: "center",
-          flexWrap: "wrap",
-          backdropFilter: "blur(12px)",
-          border: "1.5px solid #eb144c44",
-          zIndex: 1,
-        }}
-      >
+    <Box sx={{ py: { xs: 6, md: 10 }, bgcolor: "background.paper" }}>
+      <Container maxWidth="md">
         <motion.div
-          initial={{ scale: 0.8, opacity: 0 }}
-          animate={{ scale: 1, opacity: 1 }}
-          transition={{ delay: 0.2, duration: 0.8 }}
-          style={{
-            flex: "0 0 320px",
-            minWidth: 220,
-            display: "flex",
-            flexDirection: "column",
-            alignItems: "center",
-            zIndex: 1,
-          }}
+          initial={{ opacity: 0, y: 45 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.9 }}
         >
-          <img
-            src={back}
-            alt="Faisal Ahmad Bhat"
-            style={{
-              width: 220,
-              height: 220,
-              objectFit: "cover",
-              borderRadius: "50%",
-              border: "5px solid #eb144c",
-              boxShadow: "0 4px 32px #eb144c55, 0 2px 8px #0006",
-              marginBottom: "2rem",
-              background: "#181c27",
-            }}
-          />
-          <a
-            href={sample_resume}
-            target="_blank"
-            rel="noopener noreferrer"
-            style={{
-              display: "inline-block",
-              padding: "1rem 2.7rem",
-              background: "linear-gradient(90deg, #eb144c 30%, #8ED1FC 100%)",
-              color: "#fff",
-              borderRadius: "28px",
-              fontWeight: "600",
-              fontSize: "1.15rem",
-              letterSpacing: "1.2px",
-              textDecoration: "none",
-              boxShadow: "0 2px 12px #eb144c44",
-              marginTop: "0.5rem",
-              transition: "transform 0.18s, box-shadow 0.18s",
-              border: "none",
-              outline: "none",
-              cursor: "pointer",
-            }}
-            onMouseOver={e => {
-              e.currentTarget.style.transform = "scale(1.07)";
-              e.currentTarget.style.boxShadow = "0 4px 22px #eb144c99";
-            }}
-            onMouseOut={e => {
-              e.currentTarget.style.transform = "scale(1)";
-              e.currentTarget.style.boxShadow = "0 2px 12px #eb144c44";
-            }}
-          >
-            Resume
-          </a>
+          <Paper elevation={3} sx={{ p: { xs: 3, md: 5 }, borderRadius: 6, bgcolor: "#23263a", mb: 2 }}>
+            <Stack direction={{ xs: "column", md: "row" }} spacing={5} alignItems="center">
+              <Box sx={{ flex: 1, display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+                <Avatar
+                  src="/my_photo.jpg" // Update this path to your image!
+                  alt="Faisal Ahmad"
+                  sx={{
+                    width: 150,
+                    height: 150,
+                    bgcolor: "#eb144c22",
+                    boxShadow: "0 4px 32px #eb144c33, 0 2px 8px #0004",
+                    border: "4px solid #eb144c"
+                  }}
+                />
+              </Box>
+              <Box sx={{ flex: 3 }}>
+                <Typography
+                  variant="h3"
+                  sx={{
+                    color: "#eb144c",
+                    fontWeight: 800,
+                    mb: 2,
+                    letterSpacing: 2
+                  }}
+                >
+                  About Me
+                </Typography>
+                <Typography variant="body1" sx={{ color: "#b0b4c1", mb: 2, fontSize: "1.15rem" }}>
+                  I specialize in building robust web applications with delightful user experiences.<br />
+                  I thrive on learning new technologies, building side projects, and collaborating with creative minds.<br />
+                  My work is driven by curiosity and a love for clean, maintainable code.
+                </Typography>
+                <Divider sx={{ my: 2, bgcolor: "#eb144c55" }} />
+                <Stack direction="row" spacing={2} sx={{ mt: 2 }}>
+                  <Button
+                    variant="contained"
+                    color="primary"
+                    endIcon={<FaArrowRight />}
+                    href="/resume.pdf"
+                    target="_blank"
+                    sx={{ borderRadius: 3, fontWeight: 700 }}
+                  >
+                    View Resume
+                  </Button>
+                  <Button
+                    variant="outlined"
+                    color="secondary"
+                    href="mailto:your@email.com"
+                    sx={{ borderRadius: 3, fontWeight: 700 }}
+                  >
+                    Contact Me
+                  </Button>
+                </Stack>
+                <Box sx={{ mt: 3 }}>
+                  <Typography
+                    variant="subtitle2"
+                    sx={{
+                      color: "#8ED1FC",
+                      fontWeight: 600,
+                      mb: 1.5,
+                      letterSpacing: 1
+                    }}
+                  >
+                    Highlights
+                  </Typography>
+                  <Stack spacing={1}>
+                    {highlights.map((item, i) => (
+                      <Chip
+                        key={item}
+                        label={item}
+                        sx={{
+                          bgcolor: "#181c27",
+                          color: "#eb144c",
+                          fontWeight: 600,
+                          fontSize: "1.04rem",
+                          px: 2.5,
+                          py: 1.2,
+                          borderRadius: 2,
+                          textAlign: "left"
+                        }}
+                      />
+                    ))}
+                  </Stack>
+                </Box>
+              </Box>
+            </Stack>
+          </Paper>
         </motion.div>
-        <motion.div
-          initial={{ opacity: 0, x: 50 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ delay: 0.25, duration: 0.9 }}
-          style={{ flex: "1 1 420px", zIndex: 1 }}
-        >
-          <h2 style={{
-            color: "#eb144c",
-            fontWeight: 800,
-            fontSize: "2.45rem",
-            marginBottom: "1.3rem",
-            letterSpacing: "2px",
-            textShadow: "0 2px 8px #eb144c66"
-          }}>
-            About Me
-          </h2>
-          <p style={{
-            color: "#e2e7fa",
-            fontSize: "1.35rem",
-            lineHeight: 1.8,
-            marginBottom: "1.2rem",
-            fontFamily: "Poppins, Roboto, Arial, sans-serif",
-            textShadow: "0 1px 6px #0003"
-          }}>
-            Hi! I'm <span style={{ color: "#8ED1FC", fontWeight: 700 }}>Faisal Ahmad Bhat</span>, a passionate, self-taught Full Stack Developer
-            from Kashmir, India. I turn ideas into reality through code and creativity.
-          </p>
-          <p style={{
-            color: "#b0b8d9",
-            fontSize: "1.13rem",
-            marginBottom: "1.2rem",
-            fontWeight: 500
-          }}>
-            I specialize in building robust web applications with delightful user experiences. I thrive on learning new technologies, building side projects, and collaborating with creative minds. My work is driven by curiosity and a love for clean, maintainable code.
-          </p>
-          <ul style={{
-            color: "#8ED1FC",
-            marginTop: "1.4rem",
-            paddingLeft: "1.4rem",
-            fontSize: "1.08rem",
-            fontWeight: 600,
-            listStyle: "'✨ '",
-            textShadow: "0 1px 6px #0002"
-          }}>
-            <li>Always exploring new stacks & tools</li>
-            <li>Passionate about web, AI, and open-source</li>
-            <li>Open for collaboration & freelance work</li>
-          </ul>
-        </motion.div>
-      </motion.div>
-    </section>
+      </Container>
+    </Box>
   );
 }
