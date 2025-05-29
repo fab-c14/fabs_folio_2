@@ -13,16 +13,14 @@ import {
 import { motion, AnimatePresence } from "framer-motion";
 import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
 
-const CARD_HEIGHT = 430; // Consistent card height
-
 const projects = [
   {
     name: "Flame",
-    desc: "🔥 Foundation for learning assistance and managment environment.",
+    desc: "🔥 Flame (foundation for learning assistance and management environment",
     sourceCode: "https://github.com/fab-c14/flame",
     liveLink: "https://flame-portfolio.vercel.app",
     date: "2025-04-18",
-    skills: ["React", "Vite", "Framer Motion"],
+    skills: ["React", "Vite", "javascript","node","mongodb","express"],
     tags: ["Portfolio", "Open Source"],
     image: "https://raw.githubusercontent.com/fab-c14/flame/main/public/preview.jpg",
   },
@@ -102,20 +100,30 @@ export default function Works() {
           >
             <Grid container spacing={5} justifyContent="center">
               {projects.map((project, i) => (
-                <Grid item xs={12} sm={6} md={4} key={project.name}>
-                  <motion.div variants={cardVariant}>
+                <Grid
+                  item
+                  xs={12}
+                  sm={6}
+                  md={4}
+                  key={project.name}
+                  sx={{
+                    display: "flex",
+                  }}
+                >
+                  <motion.div style={{ width: "100%" }} variants={cardVariant}>
                     <Paper
                       elevation={4}
                       sx={{
                         borderRadius: 5,
-                        background: "linear-gradient(120deg,#23263a 65%,#2e3251 100%)",
+                        background:
+                          "linear-gradient(120deg,#23263a 65%,#2e3251 100%)",
                         color: "#fff",
-                        minHeight: CARD_HEIGHT,
-                        maxHeight: CARD_HEIGHT,
-                        height: CARD_HEIGHT,
                         display: "flex",
                         flexDirection: "column",
-                        justifyContent: "flex-start",
+                        width: "100%",
+                        minWidth: 0,
+                        maxWidth: "100%",
+                        height: 430,
                         boxShadow: "0 6px 32px 0 #8ED1FC22",
                         transition: "box-shadow 0.2s, transform 0.2s",
                         "&:hover": {
