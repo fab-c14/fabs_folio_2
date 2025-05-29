@@ -1,33 +1,55 @@
-import React, { useState } from 'react';
-import 'bootstrap/dist/css/bootstrap.css';
-import HeroSection from './Components/HeroSection';
-import About from './Components/About';
-import Works from './Components/Works';
-import Footer from './Components/Footer';
-import Skills from './Components/Skills';
-import { Slide, Fade } from 'react-awesome-reveal';
-import 'tachyons';
-import ParticlesBg from 'particles-bg';
+import React from "react";
+import { CssBaseline, ThemeProvider, createTheme } from "@mui/material";
+import HeroSection from "./Components/HeroSection";
+import About from "./Components/About"; // Make sure this exists!
+import Skills from "./Components/Skills";
+import Works from "./Components/Works";
+import Footer from "./Components/Footer";
 
-const App = () => {
-  // const [particleType, setParticleType] = useState('cobweb');
-  const [isLightMode, setIsLightMode] = useState(true);
+// Minimalistic dark theme
+const theme = createTheme({
+  palette: {
+    mode: "dark",
+    background: {
+      default: "#101012",
+      paper: "#181c27",
+    },
+    primary: {
+      main: "#eb144c",
+      contrastText: "#fff",
+    },
+    secondary: {
+      main: "#8ED1FC",
+      contrastText: "#23263a",
+    },
+    text: {
+      primary: "#fff",
+      secondary: "#b0b4c1",
+    },
+  },
+  typography: {
+    fontFamily: "'Montserrat', 'Roboto', 'Fira Mono', sans-serif",
+    h3: { fontWeight: 800, letterSpacing: 2 },
+    h5: { fontWeight: 700, letterSpacing: 1 },
+    body2: { fontFamily: "'Roboto', 'sans-serif'" },
+    caption: { fontFamily: "'Fira Mono', monospace" },
+  },
+  shape: {
+    borderRadius: 12,
+  },
+});
 
-  // const handleParticleChange = () => {
-  //   setParticleType(particleType === 'cobweb' ? 'thick' : 'cobweb');
-  //   setIsLightMode(!isLightMode);
-  // };
-
+function App() {
   return (
-    <div>
-     
+    <ThemeProvider theme={theme}>
+      <CssBaseline />
       <HeroSection />
-      <About />
+      <About />      
       <Skills />
-      <Works />
+      <Works />      
       <Footer />
-    </div>
+    </ThemeProvider>
   );
-};
+}
 
 export default App;

@@ -1,81 +1,80 @@
 import React from "react";
-import { Box, Typography, Stack, IconButton, Container, Divider } from "@mui/material";
-import { motion } from "framer-motion";
-import { FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa";
+import { Box, Typography, Container, Stack, IconButton, Tooltip } from "@mui/material";
+import { FaGithub, FaTwitter, FaLinkedin, FaEnvelope } from "react-icons/fa";
 
-const socials = [
+const socialLinks = [
   {
-    icon: <FaGithub />,
+    name: "GitHub",
+    icon: <FaGithub size={22} color="#fff" />,
     url: "https://github.com/fab-c14",
-    label: "GitHub"
   },
   {
-    icon: <FaLinkedin />,
-    url: "https://www.linkedin.com/in/faisal-ahmad-bhat-aaba29229",
-    label: "LinkedIn"
+    name: "LinkedIn",
+    icon: <FaLinkedin size={22} color="#fff" />,
+    url: "https://linkedin.com/in/fab-c14",
   },
   {
-    icon: <FaTwitter />,
-    url: "https://twitter.com/your_handle",
-    label: "Twitter"
-  }
+    name: "Twitter",
+    icon: <FaTwitter size={22} color="#fff" />,
+    url: "https://twitter.com/fab14c",
+  },
+  {
+    name: "Email",
+    icon: <FaEnvelope size={22} color="#fff" />,
+    url: "mailto:your@email.com",
+  },
 ];
-
-const iconVariants = {
-  initial: { scale: 1, color: "#8ED1FC" },
-  hover: (i) => ({
-    scale: 1.2,
-    color: "#eb144c",
-    rotate: i % 2 === 0 ? -12 : 12,
-    transition: { type: "spring", stiffness: 400 }
-  })
-};
 
 export default function Footer() {
   return (
-    <Box sx={{ bgcolor: "#181c27", pt: 7, pb: 3, mt: 8 }}>
+    <Box
+      component="footer"
+      sx={{
+        bgcolor: "#181c27",
+        py: 4,
+        mt: 10,
+        borderTop: "1.5px solid #23263a",
+        boxShadow: "0 -8px 24px 0 #eb144c11",
+      }}
+    >
       <Container maxWidth="md">
-        <Divider sx={{ mb: 4, bgcolor: "#eb144c55" }} />
-        <Stack direction="row" justifyContent="center" spacing={4} mb={1}>
-          {socials.map((s, idx) => (
-            <motion.div
-              key={s.label}
-              custom={idx}
-              variants={iconVariants}
-              initial="initial"
-              whileHover="hover"
-              style={{ display: "inline-block" }}
-            >
+        <Stack direction="row" spacing={2} justifyContent="center" sx={{ mb: 1 }}>
+          {socialLinks.map((link) => (
+            <Tooltip title={link.name} key={link.name}>
               <IconButton
-                href={s.url}
+                component="a"
+                href={link.url}
                 target="_blank"
-                rel="noopener noreferrer"
-                aria-label={s.label}
+                rel="noopener"
                 sx={{
-                  fontSize: 32,
+                  bgcolor: "#23263a",
                   color: "#8ED1FC",
-                  transition: "color 0.2s",
-                  mx: 1
+                  borderRadius: "50%",
+                  transition: "all 0.2s",
+                  "&:hover": {
+                    bgcolor: "#eb144c",
+                    color: "#fff",
+                    transform: "scale(1.13) rotate(-10deg)",
+                  },
+                  m: 0.5,
                 }}
               >
-                {s.icon}
+                {link.icon}
               </IconButton>
-            </motion.div>
+            </Tooltip>
           ))}
         </Stack>
         <Typography
-          align="center"
           variant="body2"
+          align="center"
           sx={{
-            color: "#b0b8d9",
-            fontWeight: 500,
+            color: "#b0b4c1",
+            fontFamily: "'Fira Mono', monospace",
             letterSpacing: 1,
-            fontSize: "1.1rem",
-            userSelect: "none",
-            mt: 1.5
+            fontSize: "1rem",
           }}
         >
-          &copy; {new Date().getFullYear()} Faisal Ahmad Bhat. All rights reserved.
+          © {new Date().getFullYear()} Faisal Ahmad &mdash; Built with ❤️ using React & Material UI
         </Typography>
       </Container>
     </Box>

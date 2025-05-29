@@ -22,7 +22,7 @@ export default function About() {
             <Stack direction={{ xs: "column", md: "row" }} spacing={5} alignItems="center">
               <Box sx={{ flex: 1, display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
                 <Avatar
-                  src="/my_photo.jpg" // Update this path to your image!
+                  src="/back.png" // Update this path to your image!
                   alt="Faisal Ahmad"
                   sx={{
                     width: 150,
