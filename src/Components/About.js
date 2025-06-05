@@ -4,25 +4,26 @@ import { motion } from "framer-motion";
 import { FaArrowRight } from "react-icons/fa";
 
 const highlights = [
-  "Always exploring new stacks & tools",
-  "Passionate about web, AI, and open-source",
-  "Open for collaboration & freelance work"
+  "React & Next.js",
+  "Node.js & MongoDB",
+  "Material UI",
+  "Open-source & collaboration"
 ];
 
 export default function About() {
   return (
-    <Box sx={{ py: { xs: 6, md: 10 }, bgcolor: "background.paper" }}>
+    <Box sx={{ py: { xs: 6, md: 10 }, bgcolor: "background.default" }}>
       <Container maxWidth="md">
         <motion.div
           initial={{ opacity: 0, y: 45 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.9 }}
         >
-          <Paper elevation={3} sx={{ p: { xs: 3, md: 5 }, borderRadius: 6, bgcolor: "#23263a", mb: 2 }}>
+          <Paper elevation={3} sx={{ p: { xs: 3, md: 5 }, borderRadius: 6, bgcolor: "#101012", mb: 2 }}>
             <Stack direction={{ xs: "column", md: "row" }} spacing={5} alignItems="center">
               <Box sx={{ flex: 1, display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
                 <Avatar
-                  src="/back.png" // Update this path to your image!
+                  src="/back.png"
                   alt="Faisal Ahmad"
                   sx={{
                     width: 150,
@@ -46,9 +47,7 @@ export default function About() {
                   About Me
                 </Typography>
                 <Typography variant="body1" sx={{ color: "#b0b4c1", mb: 2, fontSize: "1.15rem" }}>
-                  I specialize in building robust web applications with delightful user experiences.<br />
-                  I thrive on learning new technologies, building side projects, and collaborating with creative minds.<br />
-                  My work is driven by curiosity and a love for clean, maintainable code.
+                  I'm Faisal, a web developer focused on building clean and modern apps with React, Next.js, Node.js, and MongoDB. I like simple design, open-source, and creative projects.
                 </Typography>
                 <Divider sx={{ my: 2, bgcolor: "#eb144c55" }} />
                 <Stack direction="row" spacing={2} sx={{ mt: 2 }}>
@@ -84,7 +83,7 @@ export default function About() {
                     Highlights
                   </Typography>
                   <Stack spacing={1}>
-                    {highlights.map((item, i) => (
+                    {highlights.map((item) => (
                       <Chip
                         key={item}
                         label={item}

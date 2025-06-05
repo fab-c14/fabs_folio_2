@@ -4,17 +4,17 @@ import "./Project.css";
 const projects = [
   {
     name: "FLAME",
-    desc: "Foundation for Learning Assistance and Management Environment. A robust educational platform built with the MERN stack.",
+    desc: "A modern learning management platform built with the MERN stack for students and educators.",
     sourceCode: "https://github.com/fab-c14/FLAME",
     liveLink: "",
     date: "2025-05-04",
-    skills: ["React", "Node", "Express", "MongoDB"],
+    skills: ["React", "Node.js", "Express", "MongoDB"],
     tags: ["Education", "Fullstack", "MERN"],
     image: "https://picsum.photos/370/160?random=24"
   },
   {
-    name: "tic-tac-toe",
-    desc: "A simple and fun tic-tac-toe game built with React JS. Play and challenge your logic!",
+    name: "Tic-Tac-Toe",
+    desc: "A minimal, interactive tic-tac-toe game built with React.",
     sourceCode: "https://github.com/fab-c14/tic-tac-toe",
     liveLink: "",
     date: "2024-09-02",
@@ -24,21 +24,21 @@ const projects = [
   },
   {
     name: "RatherHoney",
-    desc: "E-commerce site for selling honey online. Modern, responsive, and easy to use.",
+    desc: "A responsive e-commerce app for buying honey online. Built with a focus on usability and performance.",
     sourceCode: "https://github.com/fab-c14/RatherHoney",
     liveLink: "https://rather-honey.vercel.app",
     date: "2025-01-29",
-    skills: ["JavaScript"],
+    skills: ["JavaScript", "React", "Node.js"],
     tags: ["E-commerce", "Frontend"],
     image: "https://picsum.photos/370/160?random=26"
   },
   {
     name: "FabsBlog",
-    desc: "My personal blog application where I share thoughts and tutorials. Built with JavaScript.",
+    desc: "A personal blog platform for sharing tutorials and thoughts. Features markdown support and a clean UI.",
     sourceCode: "https://github.com/fab-c14/FabsBlog",
     liveLink: "",
     date: "2025-01-06",
-    skills: ["JavaScript"],
+    skills: ["JavaScript", "Next.js", "MongoDB"],
     tags: ["Blog", "Frontend"],
     image: "https://picsum.photos/370/160?random=27"
   }
@@ -46,11 +46,11 @@ const projects = [
 
 const Project = () => {
   return (
-    <section className="projects-section">
+    <section className="projects-section" style={{ background: "#101012" }}>
       <h2 className="projects-title">Projects</h2>
       <div className="projects-grid">
-        {projects.map((project, idx) => (
-          <div className="project-card" key={project.name}>
+        {projects.map((project) => (
+          <div className="project-card" key={project.name} style={{ background: "#181c27" }}>
             <img className="project-img" src={project.image} alt={project.name} />
             <div className="project-body">
               <h3 className="project-name">{project.name}</h3>
