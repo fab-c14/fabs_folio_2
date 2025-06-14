@@ -1,6 +1,6 @@
-import React from "react";
+import { useState } from "react";
 import { Box, Typography, Container, Stack, IconButton, Tooltip } from "@mui/material";
-import { FaGithub, FaTwitter, FaLinkedin, FaEnvelope } from "react-icons/fa";
+import { FaGithub, FaTwitter, FaLinkedin, FaEnvelope, FaHeart, FaRegHeart } from "react-icons/fa";
 
 const socialLinks = [
   {
@@ -11,7 +11,7 @@ const socialLinks = [
   {
     name: "LinkedIn",
     icon: <FaLinkedin size={22} color="#fff" />,
-    url: "https://linkedin.com/in/fab-c14",
+    url: "https://www.linkedin.com/in/faisal-ahmad-bhat-aaba29229/",
   },
   {
     name: "Twitter",
@@ -21,11 +21,12 @@ const socialLinks = [
   {
     name: "Email",
     icon: <FaEnvelope size={22} color="#fff" />,
-    url: "mailto:your@email.com",
+    url: "mailto:plesim18@email.com",
   },
 ];
 
 export default function Footer() {
+  const [hovered,setHovered] = useState(true);
   return (
     <Box
       component="footer"
@@ -74,7 +75,13 @@ export default function Footer() {
             fontSize: "1rem",
           }}
         >
-          © {new Date().getFullYear()} Faisal Ahmad &mdash; Built with ❤️ using React & Material UI
+          © {new Date().getFullYear()} Faisal Ahmad &mdash; Built with Acknowledgement of
+          <FaRegHeart
+          style={{ color: hovered ? "red" : "inherit", transition: "color 0.2s" }}
+          onMouseEnter={() => setHovered(true)}
+          onMouseLeave={() => setHovered(false)}
+          size={35}
+        />
         </Typography>
       </Container>
     </Box>

@@ -31,7 +31,7 @@ const projects = [
     sourceCode: "https://github.com/fab-c14/FabsBlog",
     liveLink: "",
     date: "2025-01-06",
-    skills: ["JavaScript", "Next.js", "MongoDB"],
+    skills: ["JavaScript", "Markdown", "React"],
     tags: ["Blog", "Frontend"],
     image: "https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=600&q=80",
   },
@@ -51,7 +51,7 @@ const projects = [
     sourceCode: "https://github.com/fab-c14/CoAssignment",
     liveLink: "https://fab-c14.github.io/CoAssignment",
     date: "2025-06-06",
-    skills: ["JavaScript", "HTML", "CSS"],
+    skills: ["JavaScript", "React", "Gemini"],
     tags: ["Automation", "Education", "Generator"],
     image: "https://images.unsplash.com/photo-1513258496099-48168024aec0?auto=format&fit=crop&w=600&q=80"
   }
