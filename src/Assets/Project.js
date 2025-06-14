@@ -1,101 +1,181 @@
 import React from "react";
-import "./Project.css";
+import { Box, Typography, Chip, Button } from "@mui/material";
+import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
 
-const projects = [
-  {
-    name: "FLAME",
-    desc: "A modern learning management platform built with the MERN stack for students and educators.",
-    sourceCode: "https://github.com/fab-c14/FLAME",
-    liveLink: "",
-    date: "2025-05-04",
-    skills: ["React", "Node.js", "Express", "MongoDB"],
-    tags: ["Education", "Fullstack", "MERN"],
-    image: "https://picsum.photos/370/160?random=24"
-  },
-  {
-    name: "Tic-Tac-Toe",
-    desc: "A minimal, interactive tic-tac-toe game built with React.",
-    sourceCode: "https://github.com/fab-c14/tic-tac-toe",
-    liveLink: "",
-    date: "2024-09-02",
-    skills: ["React", "JavaScript"],
-    tags: ["Game", "Frontend"],
-    image: "https://picsum.photos/370/160?random=25"
-  },
-  {
-    name: "RatherHoney",
-    desc: "A responsive e-commerce app for buying honey online. Built with a focus on usability and performance.",
-    sourceCode: "https://github.com/fab-c14/RatherHoney",
-    liveLink: "https://rather-honey.vercel.app",
-    date: "2025-01-29",
-    skills: ["JavaScript", "React", "Node.js"],
-    tags: ["E-commerce", "Frontend"],
-    image: "https://picsum.photos/370/160?random=26"
-  },
-  {
-    name: "FabsBlog",
-    desc: "A personal blog platform for sharing tutorials and thoughts. Features markdown support and a clean UI.",
-    sourceCode: "https://github.com/fab-c14/FabsBlog",
-    liveLink: "",
-    date: "2025-01-06",
-    skills: ["JavaScript", "Next.js", "MongoDB"],
-    tags: ["Blog", "Frontend"],
-    image: "https://picsum.photos/370/160?random=27"
-  }
-];
-
-const Project = () => {
+export default function Project({ project }) {
   return (
-    <section className="projects-section" style={{ background: "#101012" }}>
-      <h2 className="projects-title">Projects</h2>
-      <div className="projects-grid">
-        {projects.map((project) => (
-          <div className="project-card" key={project.name} style={{ background: "#181c27" }}>
-            <img className="project-img" src={project.image} alt={project.name} />
-            <div className="project-body">
-              <h3 className="project-name">{project.name}</h3>
-              <p className="project-desc">{project.desc}</p>
-              <div className="project-skills">
-                {project.skills.map(skill => (
-                  <span className="project-skill" key={skill}>{skill}</span>
-                ))}
-              </div>
-              <div className="project-tags">
-                {project.tags.map(tag => (
-                  <span className="project-tag" key={tag}>#{tag}</span>
-                ))}
-              </div>
-              <div className="project-footer">
-                <span className="project-date">{project.date}</span>
-                <div className="project-links">
-                  {project.liveLink && (
-                    <a
-                      href={project.liveLink}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="project-btn project-btn-live"
-                    >
-                      Live
-                    </a>
-                  )}
-                  {project.sourceCode && (
-                    <a
-                      href={project.sourceCode}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="project-btn project-btn-code"
-                    >
-                      Code
-                    </a>
-                  )}
-                </div>
-              </div>
-            </div>
-          </div>
-        ))}
-      </div>
-    </section>
+    <Box
+      sx={{
+        bgcolor: "#101012",
+        borderRadius: 4,
+        boxShadow: "0 8px 40px 0 rgba(235,20,76,0.12), 0 2px 8px #000a",
+        display: "flex",
+        flexDirection: "column",
+        height: 430,
+        width: "100%",
+        transition: "box-shadow 0.2s, transform 0.2s",
+        "&:hover": { transform: "scale(1.025) translateY(-4px)" },
+      }}
+    >
+      <Box
+        sx={{
+          width: "100%",
+          height: 160,
+          borderRadius: "16px 16px 0 0",
+          overflow: "hidden",
+          background: "#181c27",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+        }}
+      >
+        <img
+          src={project.image}
+          alt={project.name}
+          style={{
+            width: "100%",
+            height: "100%",
+            objectFit: "cover",
+            display: "block",
+          }}
+          loading="lazy"
+        />
+      </Box>
+      <Box
+        sx={{
+          p: 3,
+          display: "flex",
+          flexDirection: "column",
+          flex: 1,
+          minHeight: 0,
+        }}
+      >
+        {/* Title with line clamp */}
+        <Typography
+          variant="h6"
+          fontWeight={800}
+          color="#fff"
+          gutterBottom
+          sx={{
+            mb: 1,
+            overflow: "hidden",
+            display: "-webkit-box",
+            WebkitLineClamp: 2,
+            WebkitBoxOrient: "vertical",
+            minHeight: "48px",
+            maxHeight: "48px",
+          }}
+        >
+          {project.name}
+        </Typography>
+        {/* Description with line clamp */}
+        <Typography
+          variant="body2"
+          color="#b0b8d9"
+          sx={{
+            mb: 2,
+            overflow: "hidden",
+            display: "-webkit-box",
+            WebkitLineClamp: 3,
+            WebkitBoxOrient: "vertical",
+            minHeight: "54px",
+            maxHeight: "54px",
+          }}
+        >
+          {project.desc}
+        </Typography>
+        <Box sx={{ display: "flex", flexWrap: "wrap", gap: 1, mb: 1 }}>
+          {project.skills.map((skill) => (
+            <Chip
+              key={skill}
+              label={skill}
+              size="small"
+              sx={{
+                bgcolor: "#181c27",
+                color: "#8ED1FC",
+                fontWeight: 700,
+                fontFamily: "Fira Mono, monospace",
+                fontSize: "0.92rem",
+              }}
+            />
+          ))}
+        </Box>
+        <Box sx={{ display: "flex", flexWrap: "wrap", gap: 1, mb: 2 }}>
+          {project.tags.map((tag) => (
+            <Chip
+              key={tag}
+              label={`#${tag}`}
+              size="small"
+              sx={{
+                bgcolor: "#eb144c22",
+                color: "#eb144c",
+                fontWeight: 700,
+                fontFamily: "Fira Mono, monospace",
+                fontSize: "0.89rem",
+              }}
+            />
+          ))}
+        </Box>
+        <Box
+          sx={{
+            mt: "auto",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "space-between",
+          }}
+        >
+          <Typography sx={{ color: "#8ED1FC", fontSize: "0.96em" }}>
+            {project.date}
+          </Typography>
+          <Box>
+            {project.liveLink && (
+              <Button
+                href={project.liveLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                variant="contained"
+                size="small"
+                sx={{
+                  bgcolor: "#eb144c",
+                  color: "#fff",
+                  minWidth: 0,
+                  px: 1.5,
+                  mr: 1,
+                  fontWeight: 700,
+                  textTransform: "none",
+                  borderRadius: 2,
+                  boxShadow: "none",
+                }}
+                startIcon={<FaExternalLinkAlt size={16} />}
+              >
+                Live
+              </Button>
+            )}
+            {project.sourceCode && (
+              <Button
+                href={project.sourceCode}
+                target="_blank"
+                rel="noopener noreferrer"
+                variant="outlined"
+                size="small"
+                sx={{
+                  borderColor: "#8ED1FC",
+                  color: "#8ED1FC",
+                  minWidth: 0,
+                  px: 1.5,
+                  fontWeight: 700,
+                  textTransform: "none",
+                  borderRadius: 2,
+                  ml: project.liveLink ? 0 : 1,
+                }}
+                startIcon={<FaGithub size={16} />}
+              >
+                Code
+              </Button>
+            )}
+          </Box>
+        </Box>
+      </Box>
+    </Box>
   );
-};
-
-export default Project;
+}
